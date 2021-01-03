@@ -2,20 +2,25 @@
 <html>
 	<head>
 
-    <title>{{ page.title }}</title>
+    <title>About</title>
 
 			<link rel="stylesheet" href="/assets/css/styles.css">
 
 	</head>
 	<body>
 		<nav>
-			{% for item in site.data.navigation %}
-			  <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
-			{% endfor %}
+			
+			  <a href="/" >Home</a>
+			
+			  <a href="/about.html" class="current">About</a>
+			
 		  </nav>
 
 		<div class="container">
-   			{{ content }}
+   			<h2 id="about">About</h2>
+
+<p>This page tells you about me and my Stackoverflow actions.</p>
+
 		</div><!-- /.container -->
 		<footer>
     		<ul>
