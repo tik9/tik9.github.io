@@ -2,6 +2,8 @@
 layout: default
 title: About
 ---
-## About
+## {{ page.title }}
 
-This page tells you about me and my Stackoverflow actions.
+Things to know
+
+This page tells you about my actions.

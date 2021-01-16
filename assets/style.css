@@ -1,0 +1,17 @@
+.space {
+margin:20px
+}
+
+a#active {
+    font-weight: bold;
+}
+
+#boldfont {
+    font-weight: bold;
+}
+
+#links,footer li { 
+    /* display: inline;  */
+    float: left;
+    margin: 0 15px
+}

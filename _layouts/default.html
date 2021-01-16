@@ -3,24 +3,29 @@
 	<head>
 
     <title>{{ page.title }}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ "/assets/style.css"|relative_url }}">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-			<link rel="stylesheet" href="/assets/css/styles.css">
+<script src=assets/js.js></script>
 
-	</head>
+</head>
 	<body>
-		<nav>
-			{% for item in site.data.navigation %}
-			  <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
-			{% endfor %}
-		  </nav>
 
+	{% include nav.html %}
 		<div class="container">
-   			{{ content }}
+
+			{{ content }}
 		</div><!-- /.container -->
 		<footer>
-    		<ul>
-        		<li><a href="imprint.html">Imprint</a></li>
-			</ul>
+    		<ul class=list-unstyled>
+				<li><a href=imprint.html>Imprint</a></li>
+				<li>
+				<a href=https://www.buymeacoffee.com/tik1>Buy me a coffee</a>
+			</li>
+			<li>
+			<a href=https://github.com/tik9/cv/blob/master/index.html>Source</a>
+		</li>
 			</ul>
 		</footer>
 	</body>
