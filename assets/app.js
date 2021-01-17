@@ -1,13 +1,4 @@
----
-header-includes: <script src="/assets/me.js" id= spr data-name="en"></script> <link rel="stylesheet" href="assets/style_cv.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-title: Timo Körner CV
----
-## {{ page.title }}
-
-> <span class=tem>{{ ich_adresse }}</span>
-
-
-<script>
+window.onload = function () {
 
     ags = [
         {
@@ -147,4 +138,4 @@ title: Timo Körner CV
 
         template.innerHTML = innen.replace(innen, spr)
     })
-</script>
+}

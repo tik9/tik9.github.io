@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
 
-    <title>Timo Ko</title>
+<head>
+
+	<title>Timo Ko</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/style.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-<script src=assets/js.js></script>
 
 </head>
-	<body>
+
+<body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
    
@@ -20,33 +19,95 @@
         <!-- Item Home -->
         <a class="nav-item nav-link" href="/"  id = active  >Home</a>
         
-        <!-- Item About -->
-        <a class="nav-item nav-link" href="/about.html"  >About</a>
+        <!-- Item Stackexchange -->
+        <a class="nav-item nav-link" href="/se.html"  >Stackexchange</a>
         
-  <span id=links></span>
+        <!-- Item Github -->
+        <a class="nav-item nav-link" href="gh.html"  >Github</a>
+        
+        <!-- Item Download -->
+        <a class="nav-item nav-link" href="/file.html"  >Download</a>
+        
+        <!-- Item Contact -->
+        <a class="nav-item nav-link" href="contact.html"  >Contact</a>
+        
 
       </div>
     </div>
   </nav>
   <!-- id=boldfont -->
-		<div class="container">
+	<div class="container">
 
-			    <h2>Hi!</h2>
-    
-    <h4>Github Repositories</h4>
-    <div id=github></div>
-    <div id=about></div>
-		</div><!-- /.container -->
+		<p><br /><br /></p>
+
+<h3 id="hi-welcome-to-my-github-and-stackexchange-activitiestik9githubio">Hi! Welcome to my Github and Stackexchange Activities(tik9.github.io)</h3>
+<p><br /><br /></p>
+
+<h3 id="what-is-this-site-about">What is this site about?</h3>
+
+<p>Off the top of my head: 
+It is about..</p>
+
+<p>myself:</p>
+<div id="about_js"></div>
+
+<p>It is also about..</p>
+
+<p>showing my Github(<strong>GH</strong>) and Stackexchange (<strong>SE</strong>) activities.</p>
+
+<p>I think both companies do their job well, each in its way:</p>
+
+<p>GH is complex regarding user interaction and you have several possibilities including a static site for each repo. Although I must admit I never did much on Bitbucket, which should be worthwhile inspecting. But for another day..</p>
+
+<p>SE is an independent company and does a good job regarding social coding. I post and comment here and there where I can.</p>
+
+<p><img src="assets/se.png" alt="img-not-work" />
+<br /><br /></p>
+
+<h3 id="things-i-learn-while-making-the-site">Things I learn while making the site</h3>
+<ul>
+  <li>I still get to know Jekyll in-depth and someday will dive into Ruby. But again, for another day..</li>
+  <li>I continue learning the combination of Markdown, JS and Html, ideally in one file.</li>
+  <li>I improve my VSCode skills - a tool I will not miss
+<br /><br /></li>
+</ul>
+
+<h3 id="things-i-miss">Things I miss</h3>
+<p>Python! Python..? Yes, Python.</p>
+
+<p>But this is the essence: it is a static site gen, so be calm, Timo, and go for other (Python) projects if you like Python.</p>
+
+<script>
+    about = [
+        'CEO of my life',
+        'Javascript Developer',
+        'Full Stack Developer'
+    ]
+
+    aboutlinks = document.createElement('ul')
+
+    for (value of about) {
+        // console.log(i, i %3, key)
+        aboutlinksitem = document.createElement('li')
+        aboutlinksitem.textContent = value
+        aboutlinks.appendChild(aboutlinksitem)
+    }
+    document.getElementById('about_js').appendChild(aboutlinks)
+
+</script>
+
+
+
+		<br><br>
+
 		<footer>
-    		<ul class=list-unstyled>
-				<li><a href=imprint.html>Imprint</a></li>
-				<li>
-				<a href=https://www.buymeacoffee.com/tik1>Buy me a coffee</a>
-			</li>
-			<li>
-			<a href=https://github.com/tik9/cv/blob/master/index.html>Source</a>
-		</li>
-			</ul>
+			<div id=links></div>
 		</footer>
-	</body>
+	</div><!-- /.container -->
+
+	<script src=assets/links.js></script>
+	<script src=assets/functions.js></script>
+
+</body>
+
 </html>

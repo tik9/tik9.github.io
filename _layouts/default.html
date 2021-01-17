@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
-	<head>
 
-    <title>{{ page.title }}</title>
+<head>
+
+	<title>{{ page.title }}</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{ "/assets/style.css"|relative_url }}">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-<script src=assets/js.js></script>
 
 </head>
-	<body>
+
+<body>
 
 	{% include nav.html %}
-		<div class="container">
+	<div class="container">
 
-			{{ content }}
-		</div><!-- /.container -->
+		{{ content }}
+
+		<br><br>
+
 		<footer>
-    		<ul class=list-unstyled>
-				<li><a href=imprint.html>Imprint</a></li>
-				<li>
-				<a href=https://www.buymeacoffee.com/tik1>Buy me a coffee</a>
-			</li>
-			<li>
-			<a href=https://github.com/tik9/cv/blob/master/index.html>Source</a>
-		</li>
-			</ul>
+			<div id=links></div>
 		</footer>
-	</body>
+	</div><!-- /.container -->
+
+	<script src=assets/links.js></script>
+	<script src=assets/functions.js></script>
+
+</body>
+
 </html>
