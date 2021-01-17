@@ -1,9 +1,12 @@
-<!-- ---
-layout: default
---- -->
+---
+---
+
+## {{ page.title }}
+
 
 <div id=test></div>
-<!-- <div id=test2></div> -->
+
+{% include date.js %}
 <script>
 
     ul=document.createElement('ul')
@@ -37,6 +40,6 @@ layout: default
     ulc.appendChild(lic1)
     ulc.appendChild(lic2)
 
-console.log(1234)
+// console.log(1234)
 
 </script>

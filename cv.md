@@ -1,30 +1,76 @@
 ---
-header-includes: <script src="/assets/me.js" id= spr data-name="en"></script> <link rel="stylesheet" href="assets/style_cv.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 title: Timo Körner CV
 ---
 ## {{ page.title }}
 
-> <span class=tem>{{ ich_adresse }}</span>
+> <span class=tem>{ ich_adresse }</span>
+<!-- > <span class=tem>{ ich_alter }</span> years old  -->
+&emsp;&emsp;&emsp;&emsp; 
+<i class="fas fa-play-circle"></i> &emsp;<span class=tem>{ ich_website }</span>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+<link rel="stylesheet" href='assets/style_cv.css'>
+---------------------------------
+
+Working Experience
+--------------------
+Unix knowledge
+:   Apple, Linux  
+    <span class=tem>{ erfahrung_lin }</span>
+
+Windows
+:   Automation  
+    <span class=tem>{ erfahrung_win }</span>
+
+
+Further experience
+:   Web, Git  
+    <span class=tem>{ erfahrung_web }</span>
+
+Open Source
+--------------------
+Commitment
+:     
+    [Github](https://github.com/tik9)  
+    [Stackoverflow](https://stackexchange.com/users/1886776/timo?tab=activity)  
+    [Website](https://tik9.github.io)
+
+Education
+----------
+
+Information Technology
+:   *<span class=tem>{ h_studium }</span>, [Website](https://www.verwaltungsinformatiker.de)*
+    (Hof, Germany)
+
+    <span class=tem>{ h_studium_ausf }</span>. The studies include working in different IT departments (client operation, server Linux, storage) in an organisation (comparable to a dual degree).
+
+Business
+:   <span class=tem>{ b_studium }</span>, [Website](https://www.uni-bamberg.de) (Bamberg, Germany)
+
+
+Tools
+--------------------
+
+Tool | Usage (years)
+-|- 
+Django |1         
+Javascript |1           
+Postgresql |1          
+Php |2           
+Powershell |1           
+Python  |1           
 
 
 <script>
 
     ags = [
         {
-            a: "Open Xchange",
-            j: "Senior Test Automation Engineer"
+            a: 'Odoo',
+            j: 'Remote Odoo Developer / Technical Consultant'
         },
     
     ]
     
-    datei = location.href.split("/").slice(-1)[0]
-    // sprache =datei.slice(3,-5)
-    // if (datei.includes('anschreiben')){
-
-    sprache = document.getElementById("spr").getAttribute("data-name")
-    // }
-    // sprache='en'
-    // console.log(datei, sprache)
 
     templates = document.getElementsByClassName("tem")
     templates_ag = document.getElementsByClassName("tem_ag")
@@ -70,13 +116,13 @@ title: Timo Körner CV
         },
 
         erfahrung_web: {
-            en: 'Template system for cover letters and CV. Including Bash Script for copying and renaming files and converting them with Pandoc to html. Giving support as a full stack developer with focus on Frontend.',
+            en: 'Template system for cover letters and CV. Including Python Script for renaming files and converting them with Pandoc and Jekyll to html. Support as a full stack developer.',
             de: 'Einsatz von Git auf verschiedenen Systemen, u. a. Linux und Android. Javascript und Html Templating für Bewerbungsanschreiben und Lebenslauf'
         },
 
         erfahrung_win: {
-            de: 'Benutzerbetreuung im Team für 100 Benutzer. Softwareverteilung, Umstellung von Windows 7 auf Windows 10. Erstellen von Skripten. Erweiterung einer MS Access und Excel VBA Anwendung zur Prüfung und Berechnung von Bodenwerten.',
-            en: 'Fileserver automation. Software deployment. Working with a client focused team, contributing to new features in the distributed system of a german public service (Virtualization). Extension of existing client machines. Involved in designing and implementing new features for a web-based platform. Moving server data from outside to the HQ including folder permissions in NTFS. Automating the whole process and copying data over the wire with multithreading.'
+            de: 'Benutzerbetreuung im Team für 100 Benutzer. Softwareverteilung, Umstellung von Windows 7 auf Windows 10.',
+            en: 'Software deployment. Working with a client focused team, contributing to new features in the distributed system of a german public service (Virtualization). Moving server data from outside to the HQ including folder permissions in NTFS. Automating the whole process and copying data over the wire with multithreading.'
         },
 
 
@@ -87,7 +133,7 @@ title: Timo Körner CV
 
         h_studium_ausf: {
             de: 'Vergleichbar mit einem Informatik Bachelor an einer Hochschule',
-            en: 'Bachelor in IT with focus on the public sector including public law and public controlling (administration for cities and villages)'
+            en: 'Bachelor in IT with focus on the public sector including controlling (administration for cities)'
         },
 
         heute: {
@@ -107,7 +153,7 @@ title: Timo Körner CV
         },
 
         ich_website: {
-            en: 'tik9.github.io/cv'
+            en: 'tik9.github.io'
         },
 
         job_frei: {
@@ -121,21 +167,22 @@ title: Timo Körner CV
         },
 
         tools_job_web: {
-            en: 'CSS, Javascript, Mysql, Php, Python'
+            en: 'CSS, Javascript, Postgresql, Php'
         },
 
         tools_job_sys: {
-            en: 'Bash, Docker, Git, Markdown, Python, Powershell'
+            en: 'Bash, Git, Python, Powershell'
         },
     }
 
-
+sprache='en'
     Array.prototype.forEach.call(templates, function (template) {
 
         innen = template.innerHTML
 
-        template_ohne_kla = innen.slice(3, -3)
+        template_ohne_kla = innen.slice(2, -2)
         wert = werte[template_ohne_kla]
+        // console.log('wert',wert)
 
         // de= wert['de']
         if (wert['de']) {
@@ -143,7 +190,6 @@ title: Timo Körner CV
         } else {
             spr = wert['en']
         }
-        // console.log(innen + ' -> '+spr)
 
         template.innerHTML = innen.replace(innen, spr)
     })

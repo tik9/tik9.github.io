@@ -1,7 +1,7 @@
 - name: Home
-  link: /
+  link: README.html
 - name: Stackexchange
-  link: /se.html
+  link: se.html
 - name: Github
   link: gh.html
 - name: Download
