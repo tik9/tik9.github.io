@@ -2,13 +2,12 @@
 
 
     // arr = ['comments', 'posts', 'questions', 'answers']
-    copo = ['comments', 'posts']
-    max_posts = 3
+    copo = ['Comments', 'Posts']
+    max_posts = 5
     truncate_cut = 130
-    listpost = document.createElement('ul')
+    ul = document.createElement('ul')
 
     copo.forEach(function (cp_elem) {
-        // console.log('cp_elem', cp_elem)
 
         // cp_elem=document.createElement('li')
         // ul_temp=document.createElement('ul')
@@ -20,35 +19,43 @@
         // so = 'order=desc&sort=activity&site=stackoverflow&filter=withbody'
 
         url = user + '/' + cp_elem + '?' + so
-        // console.log('url', url)
-        // $.getJSON(url, function (data) {
-        //     console.log('data now', data)
-        // })
 
         responseData = fetch(url).then(response => response.json())
 
         responseData.then(({
             items,
         }) => {
-            counter_posts = 1
+            counter_posts = 0
             for ({
                 creation_date,
                 link,
                 body,
-                title
             }
                 of items) {
+
                 if (counter_posts == max_posts) {
                     break
                 }
-                console.log(title)
-
-                counter_posts++
+                // console.log('title',title)
 
                 dateString = datef(creation_date)
 
-                listItemPost = document.createElement('li')
-                listpost.appendChild(listItemPost)
+                list_item = document.createElement('li')
+
+                ul.appendChild(list_item)
+
+                if (counter_posts== max_posts/2){
+                    list_item.textContent=cp_elem
+                    list_item.style.listStyle = "none";
+                    continue
+                }
+
+                if (counter_posts== 0){
+                    counter_posts=1
+                    list_item.textContent=cp_elem
+                    continue
+                }
+
                 body = truncate(body)
 
                 body = body.replace(/<\/?[^>]+(>|$)/g, '')
@@ -57,25 +64,22 @@
                 body = body.replace(/&gt;/g, '')
 // rege()
                 a = document.createElement('a')
-                listItemPost.appendChild(a)
+                list_item.appendChild(a)
                 if (link == undefined) {
                     a.href = 'https://stackexchange.com/users/1886776/timo?tab=activity'
 
                 } else {
                     a.href = link
                 }
-                if (title== undefined){
-                    body_new=body
-                }
-                else {
-                    body_new=title
-                }
-                a.textContent = `${dateString} | ${body_new}`
+
+                a.textContent = `${dateString} | ${body}`
                 // | ${score}
+                counter_posts++
+
             }
         })
 
-        document.getElementById('stackexch').appendChild(listpost)
-        // document.getElementById(cp_elem).appendChild(listpost)
+        document.getElementById('stackexch').appendChild(ul)
+        // document.getElementById(cp_elem).appendChild(ul)
 
     })

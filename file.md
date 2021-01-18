@@ -1,16 +1,16 @@
 --- 
 layout: default
-title: Timo Ko
+title: Timo's Downloads
 ---
 
+## Downloads
 
-    <h4>Downloads</h4>
-
-    <div id="body"></div>
+- [Cv german](cv_de.html)
+- [Cv english](cv_en.html)
 
   <script>
-    (async () => {
-      const response = await fetch('https://api.github.com/repos/tik9/cv/contents/output');
+    <!-- (async () => {
+      const response = await fetch('https://api.github.com/repos/tik9/tik9.github.io/contents/_site');
       const data = await response.json()
       listfiles = document.createElement('ul')
       for (file of data) {
@@ -18,9 +18,9 @@ title: Timo Ko
         listfiles.appendChild(listItemFiles)
         a = document.createElement('a')
         listItemFiles.appendChild(a)
-        a.href = file.path
+        a.href = file.name
         a.textContent = file.name
       }
       document.getElementById('body').appendChild(listfiles)
-    })()
+    })() -->
   </script>

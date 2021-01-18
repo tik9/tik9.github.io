@@ -1,0 +1,35 @@
+<script>
+
+    templates = document.getElementsByClassName("tem")
+
+    file_name = location.href.split("/").slice(-1)
+    lang = file_name[0].substr(3, 2)
+    console.log('file,lang',file_name,lang)
+
+
+
+    heute_ms = Date.now()
+    geburtstag = Date.parse("1978-10-02")
+    alter = heute_ms - geburtstag
+    msProJahr = 31536000000
+    alter = Math.floor(alter / msProJahr)
+
+    Array.prototype.forEach.call(templates, function (template) {
+
+        innen = template.innerHTML
+
+        template_ohne_kla = innen.slice(2, -2)
+        wert = werte[template_ohne_kla]
+        // console.log('wert',wert)
+
+        // de= wert['de']
+        if (wert['de']) {
+            spr = wert[lang]
+        } else {
+            spr = wert['en']
+        }
+
+        template.innerHTML = innen.replace(innen, spr)
+    })
+    
+</script>

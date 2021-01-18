@@ -1,25 +1,8 @@
-
 ---
-header-includes: <script src="media/me.js" id=spr data-name=de></script><script src="media/ags.js"></script><script src="media/date.js"></script>
 ---
 
-**<span class=tem>{{ ich_name }}</apan>**  
-<span class=tem>{{ ich_adresse }}</span>  
-&nbsp;  
-&nbsp;
+{% include briefkopf.md %}
 
-<span class=tem_ag>{{ a }}</span>  
-Personalbüro  
-<span class=tem_ag>{{ ma }}</span>  
-&nbsp;  
-&nbsp;
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span class=tem>{{ heute }}</span>  
-&nbsp;  
-&nbsp;
-
-**<span class=tem_ag>{{ j }}</span>** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  <img align=center src="media/tk.jpg" alt="alt text" width="90"/>
-&nbsp;  
 
 Sehr geehrte Damen und Herren,
 

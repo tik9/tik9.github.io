@@ -1,4 +1,5 @@
 ---
+title: Test Nest
 ---
 
 ## {{ page.title }}
@@ -6,11 +7,10 @@
 
 <div id=test></div>
 
-{% include date.js %}
 <script>
 
     ul=document.createElement('ul')
-    document.getElementById('test').appendChild(ul)
+
     lip=document.createElement('li')
     lip.textContent='Posts'
     ul.appendChild(lip)
@@ -39,6 +39,8 @@
     lic.appendChild(ulc)
     ulc.appendChild(lic1)
     ulc.appendChild(lic2)
+
+document.getElementById('test').appendChild(ul)
 
 // console.log(1234)
 
