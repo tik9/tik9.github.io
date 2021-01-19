@@ -1,7 +1,8 @@
 # {{ page.title }}
 
-> Bergstrasse 15, 85120 Hepberg, Deutschland, Tel.: +49(0)1573 9598 220
-<!-- > <span class=tem>{ ich_alter }</span> years old  -->
+> Bergstrasse 15, 85120 Hepberg, Deutschland
+
+<!-- > +49(0)1573 9598 220 <span id=age></span> years old  -->
 &emsp;&emsp;&emsp;&emsp; 
 <i class="fas fa-play-circle"></i> &emsp;www.tik9.github.io
 

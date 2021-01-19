@@ -4,12 +4,14 @@ a#active {
     font-weight: bold;
 }
 
-#boldfont {
-    font-weight: bold;
-}
 
-#links,footer li { 
+/* #links,footer li {  */
+    footer li {
     /* display: inline;  */
     float: left;
     margin: 0 15px
+}
+
+.no-style {
+    list-style-type: none;
 }

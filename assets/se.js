@@ -44,15 +44,10 @@
 
                 ul.appendChild(list_item)
 
-                if (counter_posts== max_posts/2){
+                if (counter_posts== max_posts/2 ||counter_posts== 0){
+                    counter_posts++
                     list_item.textContent=cp_elem
-                    list_item.style.listStyle = "none";
-                    continue
-                }
-
-                if (counter_posts== 0){
-                    counter_posts=1
-                    list_item.textContent=cp_elem
+                    list_item.classList.add('list-unstyled');
                     continue
                 }
 

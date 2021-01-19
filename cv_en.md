@@ -6,8 +6,8 @@ title: Timo Körner CV
 
 Working Experience
 --------------------
-Unix knowledge
-:   Apple, Linux  
+Unix
+:   Linux  
     <span class=tem>{ erfahrung_lin }</span>
 
 Windows
@@ -16,7 +16,7 @@ Windows
 
 
 Further experience
-:   Web, Git  
+:   Web  
     <span class=tem>{ erfahrung_web }</span>
 
      
@@ -26,11 +26,12 @@ Further experience
 Education
 ----------
 
-Information Technology
+IT
 :   *<span class=tem>{ h_studium }</span>, [Website](https://www.verwaltungsinformatiker.de)*
     (Hof, Germany)
 
-    <span class=tem>{ h_studium_ausf }</span>. The studies include working in different IT departments (client operation, server Linux, storage) in an organisation (comparable to a dual degree).
+    <span class=tem>{ h_studium_ausf }</span>
+<br>
 
 Business
 :   <span class=tem>{ b_studium }</span>, [Website](https://www.uni-bamberg.de) (Bamberg, Germany)
