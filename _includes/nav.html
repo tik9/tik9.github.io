@@ -1,13 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-   
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        {% for item in site.data.navigation %}
-        <!-- Item {{item.name}} -->
-        <a class="nav-item nav-link" href="{{item.link}}" {% if page.url == item.link %} id = active {% endif %} >{{ item.name }}</a>
-        {% endfor %}
+<ul class="list-unstyled">
 
-      </div>
-    </div>
-  </nav>
-  <!-- id=boldfont -->
+  {% for item in site.data.navigation %}
+  <li><a href="{{item.link}}" {% if page.url==item.link %} id=active {% endif %}>{{ item.name }}</a></li>
+{% endfor %}
+</ul>

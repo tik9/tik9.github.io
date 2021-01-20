@@ -1,16 +1,11 @@
-// console.log('start se');
+<script>
 
-
-    // arr = ['comments', 'posts', 'questions', 'answers']
     copo = ['Comments', 'Posts']
     max_posts = 5
     truncate_cut = 130
     ul = document.createElement('ul')
 
     copo.forEach(function (cp_elem) {
-
-        // cp_elem=document.createElement('li')
-        // ul_temp=document.createElement('ul')
 
         se = 'https://api.stackexchange.com/2.2'
         user = se + '/users/1705829'
@@ -75,6 +70,6 @@
         })
 
         document.getElementById('stackexch').appendChild(ul)
-        // document.getElementById(cp_elem).appendChild(ul)
 
     })
+</script>

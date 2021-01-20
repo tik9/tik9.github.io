@@ -6,7 +6,7 @@ a#active {
 
 
 /* #links,footer li {  */
-    footer li {
+    .list-unstyled li {
     /* display: inline;  */
     float: left;
     margin: 0 15px

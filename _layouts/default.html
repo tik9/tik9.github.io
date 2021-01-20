@@ -4,24 +4,32 @@
 <head>
 
 	<title>{{ page.title }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{ "/assets/style.css"|relative_url }}">
 
 </head>
 
 <body>
+	<div class="container">
 
 <h4 style="margin: 20px;">Timo's</h4>
 
 	{% include nav.html %}
-	<div class="container">
+<br>
 
-		{{ content }}
+<h4 style="margin-top: 50px;">{{page.title}}</h4>
+
+		<div style="margin-top: 30px;">{{ content }}</div>
 
 		<br><br>
 
 		<footer>
-			<div id=links></div>
+			<div id=links></div>&emsp;&emsp;&emsp;&emsp;&emsp;
+Made with ❤ in Germany, hosted by Github&emsp;&emsp;&emsp;&emsp;&emsp;
+<button class = 'btn btn-primary' onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Scroll to Top</button>
+
 		</footer>
 	</div><!-- /.container -->
 

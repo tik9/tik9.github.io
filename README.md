@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Timo Ko
+title: Timo's Start
 ---
 
 <br><br>
@@ -27,13 +27,15 @@ Github is complex regarding user interaction and you have several possibilities 
 
 Stackexchange is an independent company and does a good job regarding social coding. I post and comment here and there where I can.
 
-![img-not-work](assets/se.png)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+![img-stackex](assets/se.png)
 
 <br><br>
 
 ### Things I learn while making the site
 - I still get to know Jekyll in-depth and someday will dive into Ruby. But, for another day..
-- I continue learning JS
+- I continue learning JS and Travis &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src='assets/travis.png' width=150px alt ='travis-img' />
+
 - I improve my VSCode skills - a tool I will not miss
 <br><br>
 

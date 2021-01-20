@@ -3,11 +3,9 @@ layout: default
 title: Timo's Stackexch.
 ---
 
-<h3>Stackexch.</h3>
-
 <div id=stackexch></div>
 
 {% include date.html %}
 
-<script src="assets/functions.js"></script>
-<script src="assets/se.js"></script>
+{% include functions.html %}
+{% include se.html %}

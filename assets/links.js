@@ -6,14 +6,14 @@
     Source:'https://github.com/tik9/tik9.github.io'
     }
 
-    links = document.createElement('ul')
-    links.classList.add('list-unstyled')
+    ul = document.createElement('ul')
+    ul.classList.add('list-unstyled')
     Object.keys(links_arr).forEach(function (key) {
         toplinksitem = document.createElement('li')
-        links.appendChild(toplinksitem)
+        ul.appendChild(toplinksitem)
         a = document.createElement('a')
         toplinksitem.appendChild(a)
         a.href = links_arr[key]
         a.textContent = key
     })
-    document.getElementById('links').appendChild(links)
+    document.getElementById('links').appendChild(ul)
