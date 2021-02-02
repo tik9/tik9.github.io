@@ -7,7 +7,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="{{ "/assets/style.css"|relative_url }}">
+	<link rel="stylesheet" href="/assets/style.css">
+{% if page.js %}
+  {% for js_file in page.js %}
+  <script src='{{ site.baseurl }}/assets/{{ js_file }}.js'></script>
+  {% endfor %}
+{% endif %}
 
 </head>
 
@@ -16,17 +21,24 @@
 
 <h4 style="margin: 20px;">Timo's</h4>
 
-	{% include nav.html %}
+<ul class=list-unstyled>
+
+  {% for item in site.data.navigation %}
+  <li><a href="{{item.link}}" {% if page.url==item.link %} id=active {% endif %}>{{ item.name }}</a></li>
+{% endfor %}
+</ul>
+
 <br>
 
-<h4 style="margin-top: 50px;">{{page.title}}</h4>
+<h3 style="margin-top: 50px;">{{page.title}}</h3>
 
 		<div style="margin-top: 30px;">{{ content }}</div>
 
 		<br><br>
 
 		<footer>
-			<div id=links></div>&emsp;&emsp;&emsp;&emsp;&emsp;
+			<div id=links></div>
+            &emsp;&emsp;&emsp;&emsp;&emsp;
 Made with ❤ in Germany, hosted by Github&emsp;&emsp;&emsp;&emsp;&emsp;
 <button class = 'btn btn-primary' onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Scroll to Top</button>
 
@@ -34,6 +46,9 @@ Made with ❤ in Germany, hosted by Github&emsp;&emsp;&emsp;&emsp;&emsp;
 	</div><!-- /.container -->
 
 	<script src=assets/links.js></script>
+    	<script src=assets/funct.js></script>
+
+    
 
 </body>
 

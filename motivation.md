@@ -1,5 +1,7 @@
 ---
+layout: default_moti
 ---
+
 
 {% include briefkopf.md %}
 
@@ -31,14 +33,3 @@ Kind regards
 &nbsp;
 
 Timo Körner
-
-
-{% include date.html %}
-
-<script>
-document.getElementById('date').innerHTML=datef()
-
-document.getElementById('comp').innerHTML='Wikimedia'
-document.getElementById('job').innerHTML='Staff Software Engineer'
-
-</script>

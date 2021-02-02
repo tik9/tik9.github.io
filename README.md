@@ -5,10 +5,10 @@ title: Timo's Start
 
 <br><br>
 
-### Hi! Welcome to my Github and Stackexchange activities(tik9.github.io)
+#### Hi! Welcome to my Github and Stackexchange activities(tik9.github.io)
 <br><br>
 
-### What is this site about?
+#### What is this site about?
 
 Off the top of my head: 
 It is about..
@@ -32,14 +32,14 @@ Stackexchange is an independent company and does a good job regarding social cod
 
 <br><br>
 
-### Things I learn while making the site
+#### Things I learn while making the site
 - I still get to know Jekyll in-depth and someday will dive into Ruby. But, for another day..
 - I continue learning JS and Travis &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src='assets/travis.png' width=150px alt ='travis-img' />
 
 - I improve my VSCode skills - a tool I will not miss
 <br><br>
 
-### Things I miss
+#### Things I miss
 Python! Python..? Yes, Python. 
 
 But the essence: this website is done and based around a static site gen, so be calm, Timo, and go for other (Python) projects if you like Python.

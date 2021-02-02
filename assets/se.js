@@ -1,9 +1,10 @@
-<script>
+window.onload=function(){
 
     copo = ['Comments', 'Posts']
     max_posts = 5
     truncate_cut = 130
     ul = document.createElement('ul')
+    document.getElementById('stack').appendChild(ul)
 
     copo.forEach(function (cp_elem) {
 
@@ -33,8 +34,6 @@
                 }
                 // console.log('title',title)
 
-                dateString = datef(creation_date)
-
                 list_item = document.createElement('li')
 
                 ul.appendChild(list_item)
@@ -61,15 +60,15 @@
                 } else {
                     a.href = link
                 }
+                date_string = datef(creation_date)
 
-                a.textContent = `${dateString} | ${body}`
+                a.textContent = `${date_string} | ${body}`
                 // | ${score}
                 counter_posts++
 
             }
         })
 
-        document.getElementById('stackexch').appendChild(ul)
 
     })
-</script>
+}

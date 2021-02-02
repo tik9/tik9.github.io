@@ -1,7 +1,6 @@
-<script>
-
-
-    user = 'tik9'
+   window.onload=function(){
+   
+   user = 'tik9'
     gh = 'https://api.github.com'
     ghApiUser = `${gh}/users/${user}`
 
@@ -55,5 +54,4 @@
     // })
 
     document.getElementById('github').appendChild(listrepos)
-
-</script>
+}

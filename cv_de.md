@@ -9,7 +9,7 @@ Berufserfahrung
 --------------------
 
 Windows
-:   Client, Server  
+:   Automatisierung  
     <span class=tem>{ erfahrung_win }</span>
 
 Unix
