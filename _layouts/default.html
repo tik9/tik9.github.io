@@ -24,7 +24,7 @@
 <ul class=list-unstyled>
 
   {% for item in site.data.navigation %}
-  <li><a href="{{item.link}}" {% if page.url==item.link %} id=active {% endif %}>{{ item.name }}</a></li>
+  <li><a href={{item.link}} {% if page.url==item.link %} id=active {% endif %}>{{ item.name }}</a></li>
 {% endfor %}
 </ul>
 
@@ -34,22 +34,30 @@
 
 		<div style="margin-top: 30px;">{{ content }}</div>
 
-		<br><br>
-
 		<footer>
-			<div id=links></div>
+		<div style="margin-bottom: 40px;margin-top: 50px;">
+        	<div id=links></div>
             &emsp;&emsp;&emsp;&emsp;&emsp;
 Made with ❤ in Germany, hosted by Github&emsp;&emsp;&emsp;&emsp;&emsp;
-<button class = 'btn btn-primary' onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Scroll to Top</button>
 
+<button id=btn class = 'btn btn-primary' onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Scroll to Top</button>
+</div>
 		</footer>
 	</div><!-- /.container -->
+
+<script>
+document.getElementById('btn').style.display='none'
+
+window.addEventListener('scroll', (event) => {
+    console.log(scrollY)
+    document.getElementById('btn').style.display='inline'
+})
+</script>
 
 	<script src=assets/links.js></script>
     	<script src=assets/funct.js></script>
 
     
-
 </body>
 
 </html>

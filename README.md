@@ -33,13 +33,23 @@ Stackexchange is an independent company and does a good job regarding social cod
 <br><br>
 
 #### Things I learn while making the site
-- I still get to know Jekyll in-depth and someday will dive into Ruby. But, for another day..
-- I continue learning JS and Travis &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src='assets/travis.png' width=150px alt ='travis-img' />
-
+- Ruby and its package management
+- JS, htmlproofer (`htmlproofer --assume-extension _site` is my favorite), Travis &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src='assets/travis.png' width=150px alt ='travis-img' />
 - I improve my VSCode skills - a tool I will not miss
+
+Apropos JS, what I used
+
+
+Function|Page|Comment
+-|-|-
+listener scroll button|all|works only if needed / if page has content to scroll
+Stackexchange api|Stackexchange|maybe it can be pulled before showing the page
+Github repo api|Github|in planning: jekyll-github-metadata plugin with GitHub API version 3
+
+
 <br><br>
 
 #### Things I miss
 Python! Python..? Yes, Python. 
 
-But the essence: this website is done and based around a static site gen, so be calm, Timo, and go for other (Python) projects if you like Python.
+The essence: this website is done and based around a static site generator (ssg), so be calm, young horse, and go for other (Python) projects if you like Python.

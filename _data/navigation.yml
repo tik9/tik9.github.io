@@ -1,10 +1,10 @@
 - name: Home
-  link: README.html
+  link: /README.html
 - name: Stackexchange
-  link: se.html
+  link: /se.html
 - name: Github
-  link: gh.html
+  link: /gh.html
 - name: Download
   link: /file.html
 - name: Contact
-  link: contact.html
+  link: /contact.html

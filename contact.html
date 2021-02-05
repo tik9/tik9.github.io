@@ -5,27 +5,35 @@ title: Timo's Contact
 
 <div id=contact style="margin-top: 40px;">
 
-<form action=https://formspree.io/f/user153015@gmail.com method=post>
-
+<form id="fs-frm" accept-charset="utf-8" action="https://formspree.io/f/user153015@gmail.com" method="post">
     <div class=form-group>
-        <label for="nam">Name</label>
-        <input type="text" name=name class= form-control id= name placeholder="Enter your Name">
-    </div>
 
+    <label for="full-name">Full Name</label>
+    <input type="text" name="name" id="full-name" placeholder="First and Last" class=form-control required="">
+    </div>
+    
     <div class=form-group>
-        <label for=exampleInputEmail1>Email (optional)</label>
-        <input type=email name=email class=form-control id=exampleInputEmail1 aria-describedby=emailHelp
-            placeholder="Enter optional email">
-        <small id="emailHelp" class="form-text text-muted">This is optional.</small>
+    <label for="email-address">Email Address</label>
+    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" class=form-control required="">
     </div>
-
+    
     <div class=form-group>
-        <label for= Textarea1>Message</label>
-        <textarea name= message class="form-control" id="extarea1" rows = 3 name= textarea
-            placeholder="Enter message"></textarea>
+      <label for=quality>The website is high in quality.</label>
+      <select name="quality" id="quality" class=form-control required="">
+        <option value="Choose" selected="" disabled="">Choose</option>
+        <option value="3">Agree</option>
+        <option value="5">Neutral</option>
+        <option value="7">Disagree</option>
+      </select>
     </div>
-    <input type=hidden name=_subject value='email von Kontaktformular'>
-    <button type=submit class='btn btn-primary'>Submit</button>
+    
+    <div>
+    <label for="message">Additional Comments</label>
+    <textarea rows="3" class=form-control name="message" id="message" placeholder="Enter message" required=""></textarea>
+    </div>
+    
+    <input type="hidden" name="_subject" id="email-subject" value="Survey Responses">
 
+    <button  class='btn btn-primary' style="margin-top: 20px;">Submit</button>
 </form>
 </div>

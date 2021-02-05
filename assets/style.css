@@ -5,13 +5,8 @@ a#active {
 }
 
 
-/* #links,footer li {  */
-    .list-unstyled li {
+.list-unstyled li {
     /* display: inline;  */
     float: left;
     margin: 0 15px
-}
-
-.no-style {
-    list-style-type: none;
 }

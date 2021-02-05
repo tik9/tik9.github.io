@@ -40,10 +40,8 @@
                 hlink.href = element.html_url
             })
 
-        } else {
-            console.log('return error from server')
         }
-    }
+   }
 
     request.onerror = function () {
         console.log('connect error')
