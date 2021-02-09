@@ -3,9 +3,9 @@ layout: default
 title: Timo's Start
 ---
 
-<br><br>
 
-#### Hi! Welcome to my Github and Stackexchange activities(tik9.github.io)
+#### Hi! Welcome to my Github and Stackexchange activities(tik9.github.io) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="fas fa-thumbs-up fa-2x"></i>
+
 <br><br>
 
 #### What is this site about?

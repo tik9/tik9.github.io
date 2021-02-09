@@ -1,3 +1,6 @@
+---
+---
+
 /*
  * CSS for making a resume with pandoc. Inspired by moderncv.
  */
@@ -24,6 +27,7 @@ h2 {
     /* This is called "sectioncolor" in the ConTeXt stylesheet. */
     color: #397249;
 }
+
 /* There is a bar just before each category */
 h2:before {
     content: "";
@@ -42,10 +46,12 @@ dt {
     width: 17%;
     font-weight: bold;
 }
+
 dd {
     margin-left: 17%;
     margin-bottom:7px;
 }
+
 p {
     margin-top:0;
     margin-bottom:7px;
@@ -73,6 +79,27 @@ hr {
     color: #A6A6A6;
 }
 
+
 table {
-    width: 100%;
+    width: 50%;
+}
+
+
+#btn {
+ display:inline-block;
+ padding:0.35em 1.2em;
+ border:0.1em solid #FFFFFF;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:300;
+ color:#FFFFFF;
+ text-align:center;
+ transition: all 0.2s;
+}
+#btn:hover {
+ color:#000000;
+ background-color:#FFFFFF;
 }

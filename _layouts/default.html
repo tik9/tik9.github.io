@@ -5,9 +5,12 @@
 
 	<title>{{ page.title }}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/assets/favicon.ico">
+
+      <link rel="stylesheet" href="/css/main.css">
+
 {% if page.js %}
   {% for js_file in page.js %}
   <script src='{{ site.baseurl }}/assets/{{ js_file }}.js'></script>
@@ -38,7 +41,8 @@
 		<div style="margin-bottom: 40px;margin-top: 50px;">
         	<div id=links></div>
             &emsp;&emsp;&emsp;&emsp;&emsp;
-Made with ❤ in Germany, hosted by Github&emsp;&emsp;&emsp;&emsp;&emsp;
+Made in: Germany | Host: Github | Fonts: <i class="fab fa-font-awesome"></i> | Language: <i class="fas fa-gem"></i>
+&emsp;&emsp;&emsp;&emsp;&emsp;
 
 <button id=btn class = 'btn btn-primary' onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Scroll to Top</button>
 </div>
@@ -49,7 +53,7 @@ Made with ❤ in Germany, hosted by Github&emsp;&emsp;&emsp;&emsp;&emsp;
 document.getElementById('btn').style.display='none'
 
 window.addEventListener('scroll', (event) => {
-    console.log(scrollY)
+    //console.log(scrollY)
     document.getElementById('btn').style.display='inline'
 })
 </script>

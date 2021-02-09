@@ -1,2 +1,4 @@
 name: Ti Koerner
 markdown: kramdown
+sass:
+  sass_dir: css
