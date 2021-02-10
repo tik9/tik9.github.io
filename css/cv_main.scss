@@ -5,7 +5,6 @@
  * CSS for making a resume with pandoc. Inspired by moderncv.
  */
 
-/* Whole document */
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     max-width: 800px;
@@ -14,7 +13,6 @@ body {
     padding: 10px 10px 10px 10px;
 }
 
-/* Title of the resume */
 h1 {
     font-size: 55px;
     color: #757575;
@@ -85,21 +83,11 @@ table {
 }
 
 
-#btn {
- display:inline-block;
- padding:0.35em 1.2em;
+button {
  border:0.1em solid #FFFFFF;
- margin:0 0.3em 0.3em 0;
- border-radius:0.12em;
- box-sizing: border-box;
- text-decoration:none;
- font-family:'Roboto',sans-serif;
- font-weight:300;
- color:#FFFFFF;
- text-align:center;
- transition: all 0.2s;
 }
-#btn:hover {
+
+button:hover {
  color:#000000;
  background-color:#FFFFFF;
 }

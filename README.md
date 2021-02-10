@@ -21,11 +21,11 @@ It is also about..
 
 ..showing my Github and Stackexchange activities.
 
-I think both companies do their job well, each in its way:
+Both companies do their job well:
 
 Github is complex regarding user interaction and you have several possibilities including a static site for each repo. Although I must admit I never did much on Bitbucket, which should be worthwhile inspecting. But for another day..
 
-Stackexchange is an independent company and does a good job regarding social coding. I post and comment here and there where I can.
+Stackexchange is an independent company and is in social coding. I post and comment here and there.
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 ![img-stackex](assets/se.png)
@@ -33,9 +33,9 @@ Stackexchange is an independent company and does a good job regarding social cod
 <br><br>
 
 #### Things I learn while making the site
-- Ruby and its package management
-- JS, htmlproofer (`htmlproofer --assume-extension _site` is my favorite), Travis &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src='assets/travis.png' width=150px alt ='travis-img' />
-- I improve my VSCode skills - a tool I will not miss
+- Game development (2D Breakout Game with JS)
+- Htmlproofer (`htmlproofer --assume-extension _site` is my favorite), Travis &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src='assets/travis.png' width=150px alt ='travis-img' />
+- VSCode skills - a tool I will not miss
 
 Apropos JS, what I used
 
