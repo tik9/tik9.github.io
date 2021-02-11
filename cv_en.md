@@ -54,16 +54,18 @@ Business
 <br>
 
 Tools
---------------------
+------------
 
 Tool | Usage (years)
-:-- | :- 
-Django |1         
-Javascript |1           
-MySql |1          
-Php |2           
-Powershell |1           
-Python  |1           
+:-- | :-
+Django |1     
+Javascript |1
+MySql | 1
+Php | 2
+Powershell | 1
+Python <i class="fab fa-python"></i> | 1           
+{:.table-striped .table-bordered}
+
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;

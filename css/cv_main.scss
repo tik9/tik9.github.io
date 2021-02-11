@@ -50,15 +50,6 @@ dd {
     margin-bottom:7px;
 }
 
-p {
-    margin-top:0;
-    margin-bottom:7px;
-}
-
-/* Blockquotes */
-blockquote {
-    text-align: center
-}
 
 /* Links */
 a {
@@ -72,22 +63,19 @@ a:hover, a:active {
     text-shadow: 1px 1px 1px #333;
 }
 
-/* Horizontal separators */
-hr {
-    color: #A6A6A6;
-}
-
 
 table {
     width: 50%;
+/*    border-collapse: collapse*/
+
 }
 
-
-button {
- border:0.1em solid #FFFFFF;
+/*
+td, th {
+  border: 1px solid
 }
+*/
 
-button:hover {
- color:#000000;
- background-color:#FFFFFF;
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }

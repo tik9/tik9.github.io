@@ -21,11 +21,18 @@ It is also about..
 
 ..showing my Github and Stackexchange activities.
 
-Both companies do their job well:
+Both are different:
 
-Github is complex regarding user interaction and you have several possibilities including a static site for each repo. Although I must admit I never did much on Bitbucket, which should be worthwhile inspecting. But for another day..
+1. Github 
+- it is complex regarding user interaction
+- You have several possibilities including a static site for each repo
+- Although I must admit I never did much on Bitbucket, which should be worthwhile inspecting. But for another day..
 
-Stackexchange is an independent company and is in social coding. I post and comment here and there.
+<br>
+2. Stackexchange
+- it is an independent and "small" company
+- it is in social coding with q&a
+- I post and comment here and there on SE.
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 ![img-stackex](assets/se.png)
@@ -45,11 +52,11 @@ Function|Page|Comment
 listener scroll button|all|works only if needed / if page has content to scroll
 Stackexchange api|Stackexchange|maybe it can be pulled before showing the page
 Github repo api|Github|in planning: jekyll-github-metadata plugin with GitHub API version 3
-
+{:.table-striped .table-bordered}
 
 <br><br>
 
 #### Things I miss
-Python! Python..? Yes, Python. 
+Python! Python..? Yes, Python. <i class="fab fa-python fa-2x"></i>
 
 The essence: this website is done and based around a static site generator (ssg), so be calm, young horse, and go for other (Python) projects if you like Python.
