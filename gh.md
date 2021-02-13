@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Timo's Github
+title: Github
 
 js: gh
 ---

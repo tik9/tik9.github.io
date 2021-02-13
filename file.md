@@ -1,6 +1,6 @@
 --- 
 layout: default
-title: Timo's Downloads
+title: Downloads
 ---
 
 - [Cv english](/assets/cv_en.pdf)

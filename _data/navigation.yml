@@ -6,8 +6,8 @@
   link: /gh.html
 - name: Download
   link: /file.html
-- name: Game
-  link: /game.html
+- name: Breakout
+  link: /breakout.html
 - name: Contact
   link: /contact.html
 
