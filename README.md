@@ -4,7 +4,7 @@ title: Start
 ---
 
 
-#### Hi! Welcome to my Github and Stackexchange activities(tik9.github.io) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="fas fa-thumbs-up fa-2x"></i>
+#### Hi! Welcome to my Github and Stackexchange activities(tik9.github.io)<span style="display:inline-block; width: 50px;"></span><i class="fas fa-thumbs-up fa-2x"></i>
 
 <br><br>
 
@@ -30,18 +30,17 @@ Both are different:
 
 <br>
 2. Stackexchange
-- it is an independent and "small" company
-- it is in social coding with q&a
-- I post and comment here and there on SE.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-![img-stackex](assets/se.png)
+|
+-|-
+An independent and "small" company in social coding with q&a|<span style="display:inline-block; width: 20px;"></span>![img-stackex](assets/se.png)
+
 
 <br><br>
 
 #### Things I learn while making the site
-- Game development (2D Breakout Game with JS)
-- Htmlproofer (`htmlproofer --assume-extension _site` is my favorite), Travis &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src='assets/travis.png' width=150px alt ='travis-img' />
+
+- Htmlproofer (`htmlproofer --assume-extension _site` is my favorite), Travis hopefully soon <span style="display:inline-block; width: 50px;"></span><img src='assets/travis.png' width=150px alt ='travis-img' />
 - VSCode skills - a tool I will not miss
 
 Apropos JS, what I used
@@ -49,9 +48,10 @@ Apropos JS, what I used
 
 Function|Page|Comment
 -|-|-
-listener scroll button|all|works only if needed / if page has content to scroll
-Stackexchange api|Stackexchange|maybe it can be pulled before showing the page
+Game development | Breakout | code taken from MDN (Mozilla) and w3school
 Github repo api|Github|in planning: jekyll-github-metadata plugin with GitHub API version 3
+Listener scroll button | All | reacts to length of page
+Stackexchange api | Stackexchange | can be improved
 {:.table-striped .table-bordered}
 
 <br><br>
@@ -59,4 +59,4 @@ Github repo api|Github|in planning: jekyll-github-metadata plugin with GitHub AP
 #### Things I miss
 Python! Python..? Yes, Python. <i class="fab fa-python fa-2x"></i>
 
-The essence: this website is done and based around a static site generator (ssg), so be calm, young horse, and go for other (Python) projects if you like Python.
+This website is done off a static site generator (ssg) and JS, so be calm, young horse, and go for other (Python) projects if you like Python.

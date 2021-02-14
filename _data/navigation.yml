@@ -1,10 +1,10 @@
 - name: Home
   link: /README.html
-- name: Stackexchange
+- name: Stackexchange Api
   link: /se.html
-- name: Github
+- name: Github Api
   link: /gh.html
-- name: Download
+- name: cv
   link: /file.html
 - name: Breakout
   link: /breakout.html

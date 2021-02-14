@@ -4,7 +4,7 @@
 canvas { background: #eee; display: left; margin: 0 auto; }
 
 
-#myModal {
+#over,#win {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     padding-top: 100px; /* Location of the box */
@@ -21,14 +21,14 @@ canvas { background: #eee; display: left; margin: 0 auto; }
     width: 50%;
 }
 
-#close {
+.close {
     color: #aaaaaa;
     font-size: 28px;
     font-weight: bold;
 }
 
-#close:hover,
-#close:focus {
+.close:hover,
+.close:focus {
     color: #000;
     cursor: pointer;
 }

@@ -16,7 +16,6 @@
             // Success!
             var data = JSON.parse(request.responseText);
 
-
             function compare(a, b) {
                 if (a.watchers > b.watchers) {
                     return -1

@@ -43,12 +43,3 @@ function datef(timestamp) {
 
     return dat
 }
-
-function alter() {
-    
-        heute_ms = Date.now()
-    geburtstag = Date.parse("1978-10-02")
-    alter = heute_ms - geburtstag
-    msProJahr = 31536000000
-    return Math.floor(alter / msProJahr)
-}

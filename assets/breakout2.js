@@ -1,17 +1,13 @@
 window.onload=function() {
-    
-var modal = document.getElementById('myModal');
+        //console.log('bro js fl')
 
-//modal.style.display = "block";
+var over = document.getElementById('over');
+var win = document.getElementById('win');
 
-var span = document.getElementById("close")
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == over) {
+        over.style.display = "none";
     }
 }
 
@@ -37,7 +33,8 @@ var rightPressed = false;
 var leftPressed = false;
 var brickRowCount = 2
 var brickColumnCount = 3
-
+score=5
+score=0
 
 var bricks = [];
 for(var c=0; c<brickColumnCount; c++) {
@@ -47,16 +44,13 @@ for(var c=0; c<brickColumnCount; c++) {
     }
 }
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener('keydown', keyDownHandler, false);
+document.addEventListener('keyup', keyUpHandler, false);
 
 function keyDownHandler(e) {
-    if(e.key == "Right" || e.key == "ArrowRight") {
-        rightPressed = true;
-    }
-    else if(e.key == "Left" || e.key == "ArrowLeft") {
-        leftPressed = true;
-    }
+    if(e.key == "ArrowRight") {rightPressed = true;    }
+    else if(e.key == "ArrowLeft") {leftPressed = true;}
+    else if (e.key=='Enter'){ startgame()}
 }
 
 function keyUpHandler(e) {
@@ -107,6 +101,12 @@ function drawBricks() {
                 if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
                     dy = -dy;
                     b.status = 0;
+                   score++;
+                  if(score == brickRowCount*brickColumnCount) {
+                        win.style.display = "block";
+                        console.log('won')
+                        clearInterval(interval); // Needed for Chrome to end game
+                    }
                 }
             }            
         }
@@ -133,8 +133,7 @@ function draw() {
         }
         else {
             console.log('game o., x, right paddle',x,paddleX+paddleWidth)
-            modal.style.display = "block";
-            //document.location.reload();
+            over.style.display = "block";
             clearInterval(interval);
             
         }
@@ -152,7 +151,21 @@ function draw() {
 }
 s=10
 //draw()
-var interval = setInterval(draw, s);
+var interval
+//document.getElementById('start_game').onclick=start_game(this)
 
+
+function startgame(e){
+    //console.log('start game',e.target.id)
+ interval = setInterval(draw, s);
+}
+
+document.getElementById("start_game").addEventListener ("click", startgame);
+document.getElementsByClassName('close')[0].addEventListener ("click", function(){location.reload()});
+document.getElementsByClassName('close')[1].addEventListener ("click", function(){location.reload()});
+
+
+//modal.style.display = "block";
+draw()
 }
 

@@ -81,6 +81,16 @@ window.addEventListener('scroll', (event) => {
     //console.log(scrollY)
     document.getElementById('btn').style.display='inline'
 })
+
+function alter() {
+    
+    heute_ms = Date.now()
+    geburtstag = Date.parse("1978-10-02")
+    alter = heute_ms - geburtstag
+    msProJahr = 31536000000
+    return Math.floor(alter / msProJahr)
+}
+
 </script>
 
 <link rel="stylesheet" href='css/cv_main.css'>
