@@ -33,7 +33,7 @@ Both are different:
 
 |
 -|-
-An independent and "small" company in social coding with q&a|<span style="display:inline-block; width: 20px;"></span>![img-stackex](assets/se.png)
+An independent company in social coding with q&a | <span style="display:inline-block; width: 20px;"></span>![img-stackex](assets/se.png)
 
 
 <br><br>

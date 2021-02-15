@@ -1,8 +1,6 @@
 ---
 ---
 
-{% include briefkopf.md %}
-
 
 Sehr geehrte Damen und Herren,
 

@@ -1,9 +1,8 @@
 ---
 layout: default
 title: breakout game
-js: breakout2
+js: breakout3
 css: game
-order: 1
 ---
 
 <button id=start_game class='btn btn-primary'>Start Game</button><span style="display:inline-block; width: 50px;"></span>
@@ -27,8 +26,9 @@ order: 1
   </div>
 
 </div>
-
+<div id=canvas style='margin-top:70px;margin-bottom:70px'>
 <canvas id=myCanvas></canvas>
+</div>
 
 <script>
 //    console.log('star')

@@ -98,15 +98,15 @@ document.addEventListener('keydown',kdhandler,false)
 keycodes=[1,2,3, 'Arrow up', 'Return']
 
 function kdhandler(e){
-    console.log('keycodes: ',keycodes.toString(),'|',e.key)
+    //console.log('keycodes: ',keycodes.toString(),'|',e.key)
     switch(e.key){
         case '1':
+        location.href='w3.html'
+        break
+        case '3':
         location.href='/README.html'
         break
         case '2':
-        location.href='/test.html'
-        break
-        case '5':
         location.href='/breakout.html'
         break
         case 'ArrowUp':

@@ -2,8 +2,25 @@
 layout: default_moti
 ---
 
+**Timo Körner**  
+Bergstrasse 15, 85120 Hepberg, Deutschland, Tel.: +49(0)1573 9598 220
+&nbsp;  
+&nbsp;
 
-{% include briefkopf.md %}
+<span id=comp></span>  
+HR  
+&nbsp;
+&nbsp;
+
+<span style="display:inline-block; width: 450px;"></span>
+<span id=date></span>  
+&nbsp;
+&nbsp;
+
+<span style="display:inline-block; width: 350px;"></span>
+<img align=center src='../assets/tk.jpg' alt='alt text' width=80/>
+
+&nbsp;
 
 To whom it may concern:
 

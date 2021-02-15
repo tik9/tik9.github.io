@@ -66,9 +66,7 @@ Powershell | 1
 Python <i class="fab fa-python"></i> | 1           
 {:.table-striped .table-bordered}
 
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<span style="display:inline-block; width: 350px;"></span>
 <button id=btn onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Scroll to Top</button>
 
 

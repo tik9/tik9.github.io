@@ -1,13 +1,13 @@
 window.onload=function() {
-        //console.log('bro js fl')
+console.log('bro js fil')
 
 var over = document.getElementById('over');
 var win = document.getElementById('win');
 
 
 window.onclick = function(event) {
-    if (event.target == over) {
-        over.style.display = "none";
+    if (event.target == over || event.target== win) {
+        over.style.display = 'none';
     }
 }
 
@@ -46,7 +46,15 @@ for(var c=0; c<brickColumnCount; c++) {
 
 document.addEventListener('keydown', keyDownHandler, false);
 document.addEventListener('keyup', keyUpHandler, false);
+document.addEventListener("mousemove", mouseMoveHandler, false);
 
+function mouseMoveHandler(e) {
+    var relativeX = e.clientX - canvas.offsetLeft;
+    console.log('mouse',relativeX)
+    if(relativeX > 0 && relativeX < canvas.width) {
+        paddleX = relativeX - paddleWidth/2;
+    }
+}
 function keyDownHandler(e) {
     if(e.key == "ArrowRight") {rightPressed = true;    }
     else if(e.key == "ArrowLeft") {leftPressed = true;}
@@ -54,10 +62,10 @@ function keyDownHandler(e) {
 }
 
 function keyUpHandler(e) {
-    if(e.key == "Right" || e.key == "ArrowRight") {
+    if(e.key == "ArrowRight") {
         rightPressed = false;
     }
-    else if(e.key == "Left" || e.key == "ArrowLeft") {
+    else if( e.key == "ArrowLeft") {
         leftPressed = false;
     }
 }
@@ -105,7 +113,7 @@ function drawBricks() {
                   if(score == brickRowCount*brickColumnCount) {
                         win.style.display = "block";
                         console.log('won')
-                        clearInterval(interval); // Needed for Chrome to end game
+                        clearInterval(interval);
                     }
                 }
             }            
@@ -132,7 +140,7 @@ function draw() {
 			 }
         }
         else {
-            console.log('game o., x, right paddle',x,paddleX+paddleWidth)
+            //console.log('game o., x, right paddle',x,paddleX+paddleWidth)
             over.style.display = "block";
             clearInterval(interval);
             
@@ -149,7 +157,7 @@ function draw() {
     x += dx;
     y += dy;
 }
-s=10
+s=100
 //draw()
 var interval
 //document.getElementById('start_game').onclick=start_game(this)
