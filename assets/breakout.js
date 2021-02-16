@@ -1,36 +1,29 @@
 window.onload=function() {
-console.log('bro js fil')
+//console.log('bro js fil')
 
-var over = document.getElementById('over');
-var win = document.getElementById('win');
-
-
-window.onclick = function(event) {
-    if (event.target == over || event.target== win) {
-        over.style.display = 'none';
-    }
-}
+over = document.getElementById('over');
+win = document.getElementById('win');
+live=document.getElementById('live')
 
 var canvas = document.getElementById('myCanvas');
-canvas.width=960
 canvas.width=480
 
-canvas.height=640
 canvas.height=320
 
-var ctx = canvas.getContext('2d');
+lives = 2
+
+ctx = canvas.getContext('2d');
 var ballRadius = 10;
 var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
 var dy = -2;
 var paddleHeight = 10;
-var paddleWidth = 75;
 var paddleWidth = 140;
 
-var paddleX = (canvas.width-paddleWidth)/2;
-var rightPressed = false;
-var leftPressed = false;
+paddleX = (canvas.width-paddleWidth)/2;
+ rightPressed = false;
+ leftPressed = false;
 var brickRowCount = 2
 var brickColumnCount = 3
 score=5
@@ -49,16 +42,33 @@ document.addEventListener('keyup', keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 
 function mouseMoveHandler(e) {
-    var relativeX = e.clientX - canvas.offsetLeft;
-    console.log('mouse',relativeX)
-    if(relativeX > 0 && relativeX < canvas.width) {
+    relativeX = e.clientX - canvas.offsetLeft
+    relativeY = e.clientY - canvas.offsetTop
+
+    console.log('mouse',canvas.offsetLeft)
+    if(relativeX -paddleWidth/2 > 0 && relativeX < canvas.width -paddleWidth/2 && relativeY >0 && relativeY < canvas.height) {
+        console.log(relativeY, canvas.height)
         paddleX = relativeX - paddleWidth/2;
+        ctx.clearRect(0, canvas.height-paddleHeight, canvas.width, paddleHeight);
+        drawPaddle()
     }
 }
 function keyDownHandler(e) {
-    if(e.key == "ArrowRight") {rightPressed = true;    }
-    else if(e.key == "ArrowLeft") {leftPressed = true;}
+    if(e.key == "ArrowRight" && paddleX < canvas.width-paddleWidth) {
+        rightPressed = true;
+        //ctx.clearRect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+        //paddleX+=7;
+        //drawPaddle()    
+        }
+    else if(e.key == "ArrowLeft" && paddleX >0) {
+        leftPressed = true;
+        //ctx.clearRect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+        //paddleX-=7;
+        //drawPaddle()
+        }
     else if (e.key=='Enter'){ startgame()}
+    else if (e.key=='ArrowUp'){location.reload()}
+
 }
 
 function keyUpHandler(e) {
@@ -67,7 +77,8 @@ function keyUpHandler(e) {
     }
     else if( e.key == "ArrowLeft") {
         leftPressed = false;
-    }
+            
+        }
 }
 
 function drawBall() {
@@ -79,6 +90,7 @@ function drawBall() {
 }
 
 function drawPaddle() {
+    console.log('dp')
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
     ctx.fillStyle = "#0095DD";
@@ -114,18 +126,31 @@ function drawBricks() {
                         win.style.display = "block";
                         console.log('won')
                         clearInterval(interval);
-                    }
+                  }
                 }
             }            
         }
     }
 }
 
+function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Score: "+score, 8, 20);
+}
+function drawLives() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Lives: "+lives, canvas.width-65, 20);
+}
 function draw() {
+    //console.log('dra')
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
     drawBall();
     drawPaddle();
+    drawScore()
+    drawLives()
     
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
@@ -135,33 +160,46 @@ function draw() {
     }
     else if(y + dy > canvas.height-ballRadius) {
         if(x > paddleX && x < paddleX + paddleWidth) {
-           if(y= y-paddleHeight){
             dy = -dy  ;
-			 }
+    
         }
         else {
-            //console.log('game o., x, right paddle',x,paddleX+paddleWidth)
-            over.style.display = "block";
-            clearInterval(interval);
+            lives--;
+            if(!lives) {
+                //console.log('game o., x, right paddle',x,paddleX+paddleWidth)
+                over.style.display = 'block';
+                clearInterval(interval); 
+            }
+            else {
+                //clearInterval(interval); 
+                x = canvas.width/2;
+                y = canvas.height-30;
+                paddleX = (canvas.width-paddleWidth)/2;
+                //live.style.display='block'
+            }
             
         }
     }
     
-    if(rightPressed && paddleX < canvas.width-paddleWidth) {
-        paddleX += 7;
-    }
-    else if(leftPressed && paddleX > 0) {
-        paddleX -= 7;
-    }
+ paddlemove()   
     
     x += dx;
     y += dy;
 }
-s=100
-//draw()
-var interval
-//document.getElementById('start_game').onclick=start_game(this)
+function paddlemove(){
+    if(rightPressed && paddleX < canvas.width-paddleWidth) {
+        paddleX += 7;
+    }
+    else if(leftPressed && paddleX > 0) {
+        console.log('left')
+        paddleX -= 7;
+    }
+}
 
+//paddlemove()
+
+s=10
+var interval
 
 function startgame(e){
     //console.log('start game',e.target.id)
@@ -169,11 +207,25 @@ function startgame(e){
 }
 
 document.getElementById("start_game").addEventListener ("click", startgame);
-document.getElementsByClassName('close')[0].addEventListener ("click", function(){location.reload()});
-document.getElementsByClassName('close')[1].addEventListener ("click", function(){location.reload()});
+document.getElementsByClassName('close')[0].addEventListener ("click", function(){console.log('close0');
+    location.reload()
+    });
+document.getElementsByClassName('close')[1].addEventListener ("click", function(){console.log('close1');
+    location.reload()
+    });
+document.getElementById('live').addEventListener ("click", function(){console.log('lost one');
+    });
+window.onclick = function(event) {
+    if (event.target == over || event.target== win) {
+        location.reload()
+    }
+     if (event.target == live) {
+        console.log('live')
+        draw()
+    }
+}
 
-
-//modal.style.display = "block";
 draw()
+drawPaddle()
 }
 

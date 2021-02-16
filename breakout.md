@@ -1,14 +1,15 @@
 ---
 layout: default
 title: breakout game
-js: breakout3
+js: breakout
 css: game
 ---
 
-<button id=start_game class='btn btn-primary'>Start Game</button><span style="display:inline-block; width: 50px;"></span>
- Move the paddle with the left and right arrow keys
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|
+-|-
+<button id=start_game class='btn btn-primary'>Start Game</button> | Move the paddle either a) with left and right keys or b) with the mouse. <br>Try the mouse handle before clicking the start button. <br>You have 2 lives and need to kill 6 bricks.
 
-<div id=over >
+<div id=over class=modal>
 
   <div class='modal-content'>
     <span class=close>&times;</span>
@@ -17,8 +18,7 @@ css: game
 
 </div>
 
-
-<div id=win>
+<div id=win class=modal>
 
   <div class='modal-content'>
     <span class=close>&times;</span>
@@ -26,6 +26,16 @@ css: game
   </div>
 
 </div>
+
+<div id=live class=modal>
+
+  <div class='modal-content'>
+    <span class=close id=live>&times;</span>
+    <p>You lost one live</p>
+  </div>
+
+</div>
+
 <div id=canvas style='margin-top:70px;margin-bottom:70px'>
 <canvas id=myCanvas></canvas>
 </div>
