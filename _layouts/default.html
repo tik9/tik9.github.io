@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="/css/{{page.css}}.css">
 {% endif %}
 
+<script src=assets/p_phaser.min.js></script>
+
 {% if page.js %}
 
   <script src='{{ site.baseurl }}/assets/{{ page.js }}.js'></script>
@@ -60,12 +62,16 @@ Made in: Germany | Host: Github | Fonts: <i class="fab fa-font-awesome"></i> | T
 	</div><!-- /.container -->
 
 <script>
+url=window.location
+//console.log(url)
+
 document.getElementById('scroll_btn').style.display='none'
 
+if  (url.pathname !='/phaser.html') {
 window.addEventListener('scroll', (event) => {
-    //console.log(scrollY)
     document.getElementById('scroll_btn').style.display='inline'
 })
+}
 
 links_arr = {
     // LinkedIn: 'https://linkedin.com/in/timo-körner-65ab601b1',
@@ -86,8 +92,6 @@ Object.keys(links_arr).forEach(function (key) {
 })
 document.getElementById('links').appendChild(ul)
 
-
-url=window.location
 if (url.host == 'localhost:4000'){
     document.title='lh-'
 

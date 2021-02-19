@@ -45,9 +45,8 @@ function mouseMoveHandler(e) {
     relativeX = e.clientX - canvas.offsetLeft
     relativeY = e.clientY - canvas.offsetTop
 
-    console.log('mouse',canvas.offsetLeft)
     if(relativeX -paddleWidth/2 > 0 && relativeX < canvas.width -paddleWidth/2 && relativeY >0 && relativeY < canvas.height) {
-        console.log(relativeY, canvas.height)
+        //console.log(relativeY, canvas.height)
         paddleX = relativeX - paddleWidth/2;
         ctx.clearRect(0, canvas.height-paddleHeight, canvas.width, paddleHeight);
         drawPaddle()
@@ -207,10 +206,12 @@ function startgame(e){
 }
 
 document.getElementById("start_game").addEventListener ("click", startgame);
-document.getElementsByClassName('close')[0].addEventListener ("click", function(){console.log('close0');
+document.getElementsByClassName('close')[0].addEventListener ("click", function(){
+    //console.log('close0');
     location.reload()
     });
-document.getElementsByClassName('close')[1].addEventListener ("click", function(){console.log('close1');
+document.getElementsByClassName('close')[1].addEventListener ("click", function(){
+    //console.log('close1');
     location.reload()
     });
 document.getElementById('live').addEventListener ("click", function(){console.log('lost one');

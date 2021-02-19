@@ -5,7 +5,13 @@ title: Contact
 
 <div id=contact style="margin-top: 40px;">
 
-<form id="fs-frm" accept-charset="utf-8" action="https://formspree.io/f/user153015@gmail.com" method="post">
+<h5>Two ways:</h5>
+- <span class=mail>window.atob('dXNlcjE1MzAxNUBnbWFpbC5jb20=')</span><br>
+- Form: 
+
+<div style='margin-top:40px'></div>
+
+<form class=mail id="fs-frm" accept-charset="utf-8" method="post">
     <div class=form-group>
 
     <label for="full-name">Full Name</label>
@@ -37,3 +43,11 @@ title: Contact
     <button  class='btn btn-primary' style="margin-top: 20px;">Submit</button>
 </form>
 </div>
+
+<script>
+mail=window.atob('dXNlcjE1MzAxNUBnbWFpbC5jb20=')
+//console.log()
+//document.getElementsByClassName('mail')[0].textContent=mail
+document.getElementsByClassName('mail')[1].action= 'https://formspree.io/f/'+mail
+
+</script>

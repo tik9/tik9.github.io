@@ -4,11 +4,11 @@
   link: /se.html
 - name: Github Api
   link: /gh.html
-- name: cv
-  link: /file.html
 - name: Breakout
   link: /breakout.html
 - name: w3 game
-  link: /w3.html
+  link: /w7.html
+- name: phaser
+  link: /phase.html
 - name: Contact
   link: /contact.html

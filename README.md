@@ -40,7 +40,7 @@ Link | |![img-stackex](assets/se.png)
 
 Tool | About
 -|-
-Htmlproofer (`htmlproofer --assume-extension _site`| Check html code
+Htmlproofer (`--assume-extension _site`| Check html code
 Travis | <img src='assets/travis.png' width=150px alt ='travis-img' />
 VSCode | a tool I will not miss
 {:.table-striped .table-bordered}
@@ -50,20 +50,22 @@ VSCode | a tool I will not miss
 #### Apropos JS: what I used
 
 
-Function|Page|Comment
+Function|Page|Comment|Example
 -|-|-
 Game development | Breakout | code taken from MDN (Mozilla) and w3school
-Github repo api|Github|in planning: jekyll-github-metadata plugin with GitHub API version 3
-Listener scroll button | All | reacts to length of page
-Stackexchange api | Stackexchange | can be improved
+Github repo api|Github|planning: jekyll-github plugin with GitHub API
+Listener scroll button | All | reacts to length of page|<button class=button onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Click</button>
+Listener Keys|All|'1' for Game 1, '2', for Game 2, '3' for this page
+Stackexchange api | Stackexchange | Comments and posts
 {:.table-striped .table-bordered}
 
 <br><br>
 
 #### Improvements
 
-Site|Feature
+Site|Feature|Detail
 -|-|
-Breakout Game|Left and right keys before Game Start
-Breakout Game|Bottom Mouse movements below Canvas should not move the paddle
+breakout|Keys|Left and right keys before Game Start
+breakout|Mouse Control|Bottom Mouse movements below Canvas should not move the paddle
+breakout|Loop|show modal when live is gone
 {:.table-striped .table-bordered}
