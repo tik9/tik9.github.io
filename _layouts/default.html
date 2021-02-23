@@ -62,8 +62,11 @@ Made in: Germany | Host: Github | Fonts: <i class="fab fa-font-awesome"></i> | T
 	</div><!-- /.container -->
 
 <script>
+
+if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+
 url=window.location
-//console.log(url)
+console.log('os',OSName)
 
 document.getElementById('scroll_btn').style.display='none'
 

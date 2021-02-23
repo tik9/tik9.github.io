@@ -47,7 +47,7 @@ VSCode | a tool I will not miss
 
 
 <br><br>
-#### Apropos JS: what I used
+#### JS - what I used
 
 
 Function|Page|Comment|Example
