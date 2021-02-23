@@ -5,9 +5,8 @@ over = document.getElementById('over');
 win = document.getElementById('win');
 live=document.getElementById('live')
 
-var canvas = document.getElementById('myCanvas');
+canvas = document.getElementById('myCanvas');
 canvas.width=480
-
 canvas.height=320
 
 lives = 2
@@ -207,7 +206,6 @@ function startgame(e){
 
 document.getElementById("start_game").addEventListener ("click", startgame);
 document.getElementsByClassName('close')[0].addEventListener ("click", function(){
-    //console.log('close0');
     location.reload()
     });
 document.getElementsByClassName('close')[1].addEventListener ("click", function(){

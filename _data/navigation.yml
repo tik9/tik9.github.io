@@ -6,8 +6,8 @@
   link: /gh.html
 - name: Breakout
   link: /breakout.html
-- name: w3 game
-  link: /w7.html
+#- name: w3 game
+#  link: /w7.html
 - name: phaser
   link: /phase.html
 - name: Contact

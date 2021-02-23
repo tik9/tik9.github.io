@@ -9,7 +9,7 @@ title: Timo Körner CV
 &emsp;www.tik9.github.io
 
 -----------
-<br>
+
 
 Working Experience
 --------------------
@@ -24,7 +24,7 @@ Windows <i class="fab fa-windows"></i><br>
 
 Web
 :   Web IT  <br>
-    Css, Git, Javascript, Jekyll, MySql, Php, Python (Django)  
+    Css, Git, Javascript, Jekyll, MySql, Php, Python  
     <br>
     <br>
 
@@ -49,7 +49,8 @@ IT
 <br>
 
 Business
-:   Master in Management, [Website](https://www.uni-bamberg.de) (Bamberg, DE)  
+:   Master in Management, [Website](https://www.uni-bamberg.de) (Bamberg, DE)<br>
+    Controlling, Business English and Business Spanish
 <br>
 <br>
 
@@ -58,10 +59,9 @@ Tools
 
 Tool | Usage (years)
 :-- | :-
-Django |1     
 Javascript |1
 MySql | 1
-Php | 2
+Php | 1,5
 Powershell | 1
 Python <i class="fab fa-python"></i> | 1           
 {:.table-striped .table-bordered}

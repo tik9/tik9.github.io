@@ -4,7 +4,9 @@ title: Start
 ---
 
 
-#### Hi! Welcome to my Games, Github and Stackexchange activities(tik9.github.io)<span style="display:inline-block; width: 50px;"></span><i class="fas fa-thumbs-up fa-2x"></i>
+#### Hi! Welcome to my Games, Github and Stackexchange activities(tik9.github.io)
+
+<span style="display:inline-block; width: 50px;"></span><i class="fas fa-thumbs-up fa-2x"></i>
 
 <br><br>
 
@@ -14,8 +16,8 @@ Off the top of my head:
 It is about..
 
 ##### .. myself:
-- Javascript Developer
-- Full Stack Developer
+- Javascript (Game) Developer
+- Full Stack Python Developer
 
 It is also about..
 
@@ -47,16 +49,16 @@ VSCode | a tool I will not miss
 
 
 <br><br>
-#### JS - what I used
+
+#### JS - what I use
 
 
 Function|Page|Comment|Example
 -|-|-
-Game development | Breakout | code taken from MDN (Mozilla) and w3school
-Github repo api|Github|planning: jekyll-github plugin with GitHub API
+Game dev | Breakout | code taken from MDN (Mozilla) and w3school
 Listener scroll button | All | reacts to length of page|<button class=button onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Click</button>
 Listener Keys|All|'1' for Game 1, '2', for Game 2, '3' for this page
-Stackexchange api | Stackexchange | Comments and posts
+Game dev | Phaser | Physics: Arcade
 {:.table-striped .table-bordered}
 
 <br><br>
