@@ -1,5 +1,4 @@
 ---
-layout: cv
 title: Timo Körner CV
 ---
 
