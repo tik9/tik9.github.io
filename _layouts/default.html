@@ -53,13 +53,10 @@
 {% endif %}
 		<div style="margin-bottom: 40px;margin-top: 50px;">
         	<div id=links></div>
-            &emsp;&emsp;&emsp;&emsp;&emsp;
-Made in: Germany | Host: Github | Fonts: <i class="fab fa-font-awesome"></i> | Tools: <i class="fas fa-gem"></i>, <i class="fab fa-google"></i>
-&emsp;&emsp;&emsp;&emsp;&emsp;
-
-<button id=scroll_btn class = 'btn btn-primary' onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Scroll to Top</button>
+<span style="display:inline-block; width: 50px;"></span>
+Made in: Germany &emsp;&emsp;&emsp;&emsp;&emsp;<button id=scroll_btn class = 'btn btn-primary'>Scroll to Top</button>
 </div>
-		</footer>
+</footer>
 	</div><!-- /.container -->
 
 <script>
@@ -68,12 +65,15 @@ if (navigator.appVersion.indexOf("Win")!=-1) os='Windows';
 
 url=window.location
 // console.log('os',os)
-document.getElementById('scroll_btn').style.display='none'
+
+button=document.getElementById('scroll_btn')
+button.style.display='none'
+
+button.addEventListener('click',event =>{ window.scrollTo({top: 0, behavior: "smooth"})})
 
 window.addEventListener('scroll', (event) => {
-    document.getElementById('scroll_btn').style.display='inline'
+    button.style.display='inline'
 })
-
 
 links_arr = {
     // LinkedIn: 'https://linkedin.com/in/timo-körner-65ab601b1',
