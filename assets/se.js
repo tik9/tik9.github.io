@@ -32,7 +32,6 @@ window.onload=function(){
                 if (counter_posts == max_posts) {
                     break
                 }
-                // console.log('title',title)
 
                 list_item = document.createElement('li')
 
@@ -51,7 +50,9 @@ window.onload=function(){
                 body = body.replace(/&quot;/g, '')
                 body = body.replace(/&#39;/g, '')
                 body = body.replace(/&gt;/g, '')
-// rege()
+                // rege()
+                // console.log('title',title)
+
                 a = document.createElement('a')
                 list_item.appendChild(a)
                 if (link == undefined) {
@@ -60,9 +61,20 @@ window.onload=function(){
                 } else {
                     a.href = link
                 }
-                date_string = datef(creation_date)
+                
+                dat = new Date(creation_date*1000)
 
-                a.textContent = `${date_string} | ${body}`
+                dd = dat.getDate()
+                mm = dat.getMonth() + 1
+                yyyy = dat.getFullYear()
+
+                if (dd < 10) { dd = '0' + dd }
+
+                if (mm < 10) { mm = '0' + mm }
+
+                dat = dd + '/' + mm + '/' + yyyy
+
+                a.textContent = `${dat} | ${body}`
                 // | ${score}
                 counter_posts++
 

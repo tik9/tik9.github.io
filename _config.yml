@@ -1,5 +1,5 @@
-name: Ti Koerner
-markdown: kramdown
+livereload: True
+
 sass:
   sass_dir: css
   sourcemap: never
