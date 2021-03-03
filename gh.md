@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Github
-js: gh
+js: gh1
 ---
 
 <div id=github></div>

@@ -2,7 +2,7 @@
 layout: default
 title: Stackexchange
 
-js: se
+js: se2
 ---
 
 <i class="fab fa-stack-overflow fa-2x"></i>
