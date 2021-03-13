@@ -16,10 +16,8 @@ window.onload=function(){
 
         url = user + '/' + cp_elem + '?' + so
 
-        responseData = fetch(url).then(response => response.json())
-
-        responseData.then(({
-            items,
+        fetch(url).then(response => response.json()).then(({
+            items
         }) => {
             counter_posts = 0
             for ({
@@ -32,7 +30,6 @@ window.onload=function(){
                 if (counter_posts == max_posts) {
                     break
                 }
-                // console.log('title',title)
 
                 list_item = document.createElement('li')
 

@@ -3,124 +3,127 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
-<link rel=icon href=/assets/favicon.png>
+    <link rel=icon href=/assets/favicon.png>
 
-          <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 
-{% if page.css %}
+    {% if page.css %}
 
-  <link rel="stylesheet" href="/css/{{page.css}}.css">
-{% endif %}
+    <link rel="stylesheet" href="/css/{{page.css}}.css">
+    {% endif %}
 
-{% if page.js %}
+    {% if page.js %}
 
-  <script src='{{ site.baseurl }}/assets/{{ page.js }}.js'></script>
-{% endif %}
+    <script src='{{ site.baseurl }}/assets/{{ page.js }}.js'></script>
+    {% endif %}
 
 
 </head>
 
 <body>
-    
-	<div class="container">
 
-<h4 style="margin: 20px;">Timo's</h4>
+    <div class="container">
 
-<ul class=list-unstyled>
+        <h4 style="margin: 20px;">Timo's</h4>
 
-  {% for item in site.data.navigation %}
-  <li><a href={{item.link}} {% if page.url==item.link %} id=active {% endif %}>{{ item.name|capitalize }}</a></li>
-{% endfor %}
-</ul>
+        <ul class=list-unstyled>
 
-<br>
+            {% for item in site.data.navigation %}
+            <li><a href={{item.link}} {% if page.url==item.link %} id=active {% endif %}>{{ item.name|capitalize }}</a>
+            </li>
+            {% endfor %}
+        </ul>
 
-<h4 style="margin-top: 50px;">{{page.title|capitalize}}</h4>
+        <br>
 
-		<div style="margin-top: 30px;">{{ content }}</div>
+        <h4 style="margin-top: 50px;">{{page.title|capitalize}}</h4>
 
-		<footer>
-{% if page.js %}
-<div id=src style='margin-top:30px'>
-<a href=https://github.com/tik9/tik9.github.io/tree/main/assets/{{page.js}}.js>Source for {{ page.title |capitalize}} on Github</a>
-</div>
-{% endif %}
-		<div style="margin-bottom: 40px;margin-top: 50px;">
-        	<div id=links></div>
-<span style="display:inline-block; width: 50px;"></span>
-Made in: Germany &emsp;&emsp;&emsp;&emsp;&emsp;<button id=scroll_btn class = 'btn btn-primary'>Scroll to Top</button>
-</div>
-</footer>
-	</div><!-- /.container -->
+        <div style="margin-top: 30px;">{{ content }}</div>
 
-<script>
+        <footer>
+            {% if page.js %}
+            <div id=src style='margin-top:30px'>
+                <a href=https://github.com/tik9/tik9.github.io/tree/main/assets/{{page.js}}.js>Source for {{ page.title
+                    |capitalize}} on Github</a>
+            </div>
+            {% endif %}
+            <div style="margin-bottom: 40px;margin-top: 50px;">
+                <div id=links></div>
+                <span style="display:inline-block; width: 50px;"></span>
+                Made in: Germany &emsp;&emsp;&emsp;&emsp;&emsp;<button id=scroll_btn class='btn btn-primary'>Scroll to
+                    Top</button>
+            </div>
+        </footer>
+    </div><!-- /.container -->
 
-if (navigator.appVersion.indexOf("Win")!=-1) os='Windows';
+    <script>
 
-url=window.location
-// console.log('os',os)
+        if (navigator.appVersion.indexOf("Win") != -1) os = 'Windows';
 
-button=document.getElementById('scroll_btn')
-button.style.display='none'
+        url = window.location
+        // console.log('os',os)
 
-button.addEventListener('click',event =>{ window.scrollTo({top: 0, behavior: "smooth"})})
+        button = document.getElementById('scroll_btn')
+        button.style.display = 'none'
 
-window.addEventListener('scroll', (event) => {
-    button.style.display='inline'
-})
+        button.addEventListener('click', event => { window.scrollTo({ top: 0, behavior: "smooth" }) })
 
-links_arr = {
-    // LinkedIn: 'https://linkedin.com/in/timo-körner-65ab601b1',
-    Imprint:'imprint.html',
-'Buy me a coffee':'https://www.buymeacoffee.com/tik1',
-'Github.com':'https://github.com/tik9/tik9.github.io',
-'Games':'https://tik9.github.io/game'
-}
+        window.addEventListener('scroll', (event) => {
+            button.style.display = 'inline'
+        })
 
-ul = document.createElement('ul')
-ul.classList.add('list-unstyled')
-Object.keys(links_arr).forEach(function (key) {
-    toplinksitem = document.createElement('li')
-    ul.appendChild(toplinksitem)
-    a = document.createElement('a')
-    toplinksitem.appendChild(a)
-    a.href = links_arr[key]
-    a.textContent = key
-})
-document.getElementById('links').appendChild(ul)
+        links_arr = {
+            // LinkedIn: 'https://linkedin.com/in/timo-körner-65ab601b1',
+            Imprint: 'imprint.html',
+            'Buy me a coffee': 'https://www.buymeacoffee.com/tik1',
+            'Github.com': 'https://github.com/tik9/tik9.github.io',
+            'Games': 'https://tik9.github.io/game'
+        }
 
-if (url.host == 'localhost:4000'){
-    document.title='lh-'
+        ul = document.createElement('ul')
+        ul.classList.add('list-unstyled')
+        Object.keys(links_arr).forEach(function (key) {
+            toplinksitem = document.createElement('li')
+            ul.appendChild(toplinksitem)
+            a = document.createElement('a')
+            toplinksitem.appendChild(a)
+            a.href = links_arr[key]
+            a.textContent = key
+        })
+        document.getElementById('links').appendChild(ul)
 
-}
-document.title+='{{ page.title |capitalize}} - Timo\'s'
-document.addEventListener('keydown',kdhandler,false)
+        if (url.host == 'localhost:4000') {
+            document.title = 'lh-'
 
-keycodes=[1,2,3, 'Arrow up', 'Return']
+        }
+        document.title += '{{ page.title |capitalize}} - Timo\'s'
+        document.addEventListener('keydown', kdhandler, false)
 
-function kdhandler(e){
-    //console.log('keycodes: ',keycodes.toString(),'|',e.key)
-    switch(e.key){
-        case '2':
-        location.href='contact.html'
-        break
-        case '1':
-        location.href='/README.html'
-        break
-    }
-}
+        keycodes = [1, 2, 3, 'Arrow up', 'Return']
 
-</script>
+        function kdhandler(e) {
+            //console.log('keycodes: ',keycodes.toString(),'|',e.key)
+            switch (e.key) {
+                case '2':
+                    location.href = 'contact.html'
+                    break
+                case '1':
+                    location.href = '/README.html'
+                    break
+            }
+        }
 
-<script src=assets/funct.js></script>
+    </script>
 
-    
+    <script src=assets/funct.js></script>
+
+
 </body>
 
 </html>
