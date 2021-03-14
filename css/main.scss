@@ -1,6 +1,10 @@
 ---
 ---
 
+.container{
+    max-width:780px;
+    margin:0 auto;/*make it centered*/
+  }
 
 a#active {
     font-weight: bold;

@@ -6,7 +6,10 @@ title: Start
 
 #### Hi! Welcome to my Github and Stackexchange activities(tik9.github.io)
 
-<span style="display:inline-block; width: 50px;"></span><i class="fas fa-thumbs-up fa-2x"></i>
+{::nomarkdown}
+<span style="display:inline-block; width: 50px;"></span><i class="fas fa-thumbs-up fa-2x"></i><span style="display:inline-block; width: 20px;"></span>
+<span class=like_button_container data-commentid=1></span>
+{:/}
 
 <br><br>
 
@@ -17,7 +20,7 @@ It is about..
 
 ##### .. myself:
 - Javascript (Game) Developer
-- Full Stack Python Developer
+- Python Developer
 
 It is also about..
 
@@ -42,9 +45,8 @@ Link | |![img-stackex](assets/se.png)
 
 Tool | About
 -|-
-Htmlproofer (`--assume-extension _site`| Check html code
-Travis | <img src='assets/travis.png' width=150px alt ='travis-img' />
-VSCode | a tool I will not miss
+React|Power to JS
+VSCode | a powerful MicroSoft dev. tool
 {:.table-striped .table-bordered}
 
 
@@ -57,4 +59,5 @@ Function|Page|Comment|Example
 -|-|-
 Listener scroll button | All | reacts to length of page|{::nomarkdown}<button class=button onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Click</button>{:/}
 Listener Keys|All|Press '1' for this page, '2', for Contact
+React States|here|Change state|{::nomarkdown}<span class=like_button_container data-commentid=2></span>{:/}
 {:.table-striped .table-bordered}
