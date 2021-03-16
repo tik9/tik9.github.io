@@ -1,5 +1,11 @@
    window.onload=function(){
-   console.log(3)
+//    console.log('gh js')
+
+//    func = document.createElement('script')
+//    func.src = 'assets/funct.js'
+//    head = document.querySelector('head')
+//    head.appendChild(func)
+
    user = 'tik9'
     gh = 'https://api.github.com'
     ghApiUser = `${gh}/users/${user}`
