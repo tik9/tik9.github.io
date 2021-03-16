@@ -1,6 +1,6 @@
 ---
 layout: default
-js: api1
+js: api3
 title: Apis
 ---
 

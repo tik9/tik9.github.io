@@ -43,15 +43,14 @@ Link | |![img-stackex](assets/se.png)
 Tool | About
 -|-
 Htmlproofer (`--assume-extension _site`| Check html code
-Travis | <img src='assets/travis.png' width=150px alt ='travis-img' />
-VSCode | a tool I will not miss
+React | Using it embedded in html without npm install
+Node Js|Api to [convert dates](https://rest-test-gamma.vercel.app) to a german date format
 {:.table-striped .table-bordered}
 
 
 <br><br>
 
 #### JS - what I use
-
 
 Function|Page|Comment|Example
 -|-|-

@@ -48,7 +48,6 @@
                  td2 = document.createElement('td');
                  td3 = document.createElement('td');
                 
-                
                 created_at=element.created_at.split('T')[0]
                 yyyy=created_at.split('-')[0]    
                 mm=created_at.split('-')[1]    
