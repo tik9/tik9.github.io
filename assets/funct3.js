@@ -1,4 +1,4 @@
-// console.log('fun 2 js')
+ //console.log('fun 1 js')
 
 function truncate(str) {
     if (str.length <= truncate_cut) {

@@ -1,5 +1,5 @@
    window.onload=function(){
-//    console.log('gh js')
+    console.log('gh js')
 
 //    func = document.createElement('script')
 //    func.src = 'assets/funct.js'
@@ -62,11 +62,9 @@
             create_at = dd + "/" + mm + "/" + yyyy;
             create_at=document.createTextNode(create_at)
                 td1.appendChild(create_at)
-                 //console.log('da',newdate)
                 watchers=document.createTextNode(element.watchers)
                 td2.appendChild(watchers)
                 hlink = document.createElement('a')
-                //link=document.createTextNode(hlink)
                 description=truncate(element.description)
                 td3.appendChild(hlink)
                 tr.appendChild(td1)
@@ -74,10 +72,6 @@
                 tr.appendChild(td3)
                 table.appendChild(tr)
                 
-                //listItemRepo = document.createElement('li')
-                //listrepos.appendChild(listItemRepo)
-                //listItemRepo.appendChild(hlink)
-                //hlink.textContent = ` ${create_at} - ${description} | Stars: ${element.watchers}`
                 hlink.textContent = description
 
                 hlink.href = element.html_url
@@ -92,9 +86,6 @@
 
     request.send();
 
-    // })
-
-    //document.getElementById('github').appendChild(listrepos)
         document.getElementById('github').appendChild(table)
 
 }

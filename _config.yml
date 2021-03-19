@@ -1,4 +1,5 @@
 livereload: True
+livereload_min_delay: 5
 
 sass:
   sass_dir: css

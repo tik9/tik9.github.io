@@ -36,7 +36,7 @@ user interaction | complex | complex
 own static site | yes | yes
 Alternatives | Bitbucket | no
 Content | a big company in social coding | An independent company in social coding with q&a | 
-Link | |![img-stackex](assets/se.png)
+Link | [<i class="fab fa-github fa-2x"></i>](https://github.com)|[![img-stackex](assets/pic_se.png)](https://Stackexchange.com)
 {:.table-striped .table-bordered}
 
 <br><br>
@@ -45,9 +45,10 @@ Link | |![img-stackex](assets/se.png)
 
 Tool | About
 -|-
-Htmlproofer (`--assume-extension _site`| Check html code
+Htmlproofer| Check html code
 React | Using it embedded in html without npm install
 Node Js|Api to [convert dates](https://rest-test-gamma.vercel.app) to a german date format
+Jest tests|<span id=count>0</span> <button id="increment-button">counter</button>
 {:.table-striped .table-bordered}
 
 
