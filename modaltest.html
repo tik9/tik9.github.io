@@ -1,13 +1,15 @@
 <head>
-<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css />
+  <link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css />
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js></script>
+  <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js></script>
 </head>
 
-<button id=test1 class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2"> Launch demo modal 1</button>
-<button id=test2 class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2"> Launch demo modal 2</button>
+<button id=test1 class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2"> Launch demo modal
+  1</button>
+<button id=test2 class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2"> Launch demo modal
+  2</button>
 
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -26,15 +28,14 @@
 </div>
 
 <script>
-    console.log('star')
+  console.log('star')
 
- function testFun(variable){
-    console.log('var',variable)
+  function testFun(variable) {
+    console.log('var', variable)
+    document.getElementById('testH1').innerHTML = variable;
+  }
 
-document.getElementById('testH1').innerHTML=variable;
-}
-
-document.getElementById('test1').addEventListener('click',function(){testFun('testId1')},false)
-document.getElementById('test2').addEventListener('click',function(){testFun('testId2')},false)
+  document.getElementById('test1').addEventListener('click', function () { testFun('testId1') }, false)
+  document.getElementById('test2').addEventListener('click', function () { testFun('testId2') }, false)
 
 </script>

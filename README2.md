@@ -43,14 +43,12 @@ Link | [<i class="fab fa-github fa-2x"></i>](https://github.com)|[![img-stackex]
 
 #### Things I learn while making the site
 
-Tool | About
+Tool|About
 -|-
-Htmlproofer| Check html code
 React | Using it embedded in html without npm install
 Node Js|Api to [convert dates](https://rest-test-gamma.vercel.app) to a german date format
-Jest tests|<span id=count>0</span> <button id="increment-button">counter</button>
+Jest tests|{::nomarkdown}<span style="display:inline-block; width: 30px" id=count>0</span> <button id="increment-button">counter</button>{:/}
 {:.table-striped .table-bordered}
-
 
 <br><br>
 
@@ -62,3 +60,5 @@ Listener scroll button | All | reacts to length of page|{::nomarkdown}<button cl
 Listener Keys|All|Press '1' for this page, '2', for Contact
 React States|here|Change state|{::nomarkdown}<span class=like_button_container data-commentid=2></span>{:/}
 {:.table-striped .table-bordered}
+
+{::nomarkdown}<script src=assets/bundle.js></script>{:/}

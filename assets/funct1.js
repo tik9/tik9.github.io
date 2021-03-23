@@ -28,4 +28,4 @@ function rege(body) {
     return body
 }
 
-module.exports=rege
+// module.exports=rege
