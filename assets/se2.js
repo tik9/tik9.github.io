@@ -29,6 +29,7 @@ window.onload = function () {
 
     copo.forEach(function (cp_elem) {
 
+        activity = 'https://stackexchange.com/users/1886776/timo?tab=activity'
         se = 'https://api.stackexchange.com/2.2'
         user = se + '/users/1705829'
         so = 'site=stackoverflow'
@@ -73,12 +74,11 @@ window.onload = function () {
 
                 body = truncate(body)
 
-                // body = rege(body)
-                body=body.replace('/"/', '')
+                body = rege(body)
 
                 a = document.createElement('a')
                 if (link == undefined) {
-                    a.href = 'https://stackexchange.com/users/1886776/timo?tab=activity'
+                    a.href = activity
 
                 } else {
                     a.href = link
@@ -107,7 +107,6 @@ window.onload = function () {
 
             }
         })
-
 
     })
 }

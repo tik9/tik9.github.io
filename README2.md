@@ -60,5 +60,3 @@ Listener scroll button | All | reacts to length of page|{::nomarkdown}<button cl
 Listener Keys|All|Press '1' for this page, '2', for Contact
 React States|here|Change state|{::nomarkdown}<span class=like_button_container data-commentid=2></span>{:/}
 {:.table-striped .table-bordered}
-
-{::nomarkdown}<script src=assets/bundle.js></script>{:/}
