@@ -1,0 +1,26 @@
+.container {
+  max-width: 580px;
+  margin: 0 auto;
+  /*make it centered : top right, bottom l*/ }
+
+#slideSource {
+  opacity: 1;
+  transition: opacity 1s; }
+
+#slideSource.fade {
+  opacity: 0; }
+
+footer,
+#ghlink {
+  margin-top: 60px; }
+
+h3,
+h4,
+.margin,
+header {
+  margin-bottom: 40px;
+  margin-top: 40px; }
+
+li {
+  float: left;
+  margin: 0 15px; }

@@ -1,5 +1,4 @@
 
-window.onload = function () {
     // console.log('se js')
     // func = document.createElement('script')
     // func.src = 'assets/funct.js'
@@ -19,12 +18,12 @@ window.onload = function () {
     th1.appendChild(document.createTextNode('Date'))
     th2 = document.createElement('th')
     th2.appendChild(document.createTextNode('Link'))
-    th3 = document.createElement('th')
-    th3.appendChild(document.createTextNode('Score'))
+    // th3 = document.createElement('th')
+    // th3.appendChild(document.createTextNode('Score'))
     tr = document.createElement('tr')
     tr.appendChild(th1)
     tr.appendChild(th2)
-    tr.appendChild(th3)
+    // tr.appendChild(th3)
     table.appendChild(tr)
 
     copo.forEach(function (cp_elem) {
@@ -52,11 +51,11 @@ window.onload = function () {
                 tr = document.createElement('tr');
                 td1 = document.createElement('td');
                 td2 = document.createElement('td');
-                td3 = document.createElement('td');
+                // td3 = document.createElement('td');
 
                 tr.appendChild(td1)
                 tr.appendChild(td2)
-                tr.appendChild(td3)
+                // tr.appendChild(td3)
                 table.appendChild(tr)
 
                 if (counter_posts == max_posts) {
@@ -100,13 +99,12 @@ window.onload = function () {
 
                 td1.appendChild(document.createTextNode(dat))
                 td2.appendChild(a)
-                if (cp_elem != 'Comments') {
-                    td3.appendChild(document.createTextNode(score))
-                }
+                // if (cp_elem != 'Comments') {
+                //     td3.appendChild(document.createTextNode(score))
+                // }
                 counter_posts++
 
             }
         })
 
     })
-}

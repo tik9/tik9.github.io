@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "express": "^4.17.1",
     "jest": "^26.6.3",
     "jsdom": "^16.5.1"
   },
@@ -19,13 +20,16 @@
   },
   "homepage": "https://tik9.github.io",
   "scripts": {
+    "start": "nodemon server.js -e js,css,html,jpg,png,scss",
     "test": "jest",
-    "build": "browserify assets/func.js -o assets/bundle.js"
+    "build": "browserify assets/func.js -o assets/bundle.js",
+    "sass": "node-sass -w assets -o assets"
   },
   "jest": {
     "verbose": true,
     "modulePathIgnorePatterns": [
-      "_site","testing"
+      "_site",
+      "testing"
     ]
   }
 }
