@@ -1,0 +1,74 @@
+<html>
+
+<body>
+
+    <div class=container>
+        <h3></h3>
+        <header></header>
+        <br>
+        <h4></h4>
+
+        <div class="margin">
+            <label for="message">Input:</label>
+            <textarea rows="3" class='form-control col-sm-4' id="message" placeholder="Enter markdown"
+                pattern="[a-zA-Z0-9!?@#$*_|]{4,25}"></textarea>
+
+            <div style="margin-bottom: 10px;"></div>
+
+            <button class="btn" id=send>Convert Text</button>
+            <button class="btn" id=clear>Clear Text</button>
+        </div>
+
+        To be converted: <div id=output>
+        </div>
+
+        <div class="margin" style="font-weight: bold;">
+            Html: <div id=html></div>
+        </div>
+
+        <div id=ghlink></div>
+
+        <footer></footer>
+
+        <script src=/assets/base.js></script>
+        <script>
+            input = document.querySelector('textarea')
+            output = document.querySelector('#output')
+            outputHtml = document.querySelector('#html')
+            clearButton = document.querySelector('#clear')
+            sendButton = document.querySelector('#send')
+            clearButton.addEventListener('click', event => {
+                input.value = ''
+                output.textContent = ''
+                outputHtml.textContent = ''
+            })
+
+            input.addEventListener('keypress', event => {
+                output.textContent += event.key
+                // console.log(event.key)
+            })
+
+            url = '/convertmd'
+            sendButton.addEventListener('click', event => {
+                
+                output.textContent = ''
+                outputHtml.textContent = ''
+
+                fetch(url, {
+                    method: 'POSt',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ 'content': input.value })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // console.log(data)
+                        outputHtml.appendChild(document.createTextNode(data))
+                    })
+            })
+
+        </script>
+</body>
+
+</html>

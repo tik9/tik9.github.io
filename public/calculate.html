@@ -1,0 +1,83 @@
+<html>
+
+<body>
+    <div class=container>
+        <h3></h3>
+        <header></header>
+        <br>
+        <h4></h4>
+
+        <input id=result>
+        <div style="margin-top: 20px;"></div>
+        <div id=keypad></div>
+        <div style="margin-top: 20px;"></div>
+
+        <button class="button" id=clear>clear</button>
+
+        <div id=ghlink></div>
+
+        <footer></footer>
+
+    </div>
+
+    <script src="/assets/base.js"></script>
+
+    <script>
+        result = document.getElementById('result')
+        keypad = document.getElementById('keypad')
+        clear = document.getElementById('clear')
+        clear.className = 'btn'
+        // button = document.createElement('button')
+        // button.textContent = 1
+        // keypad.appendChild(button)
+        result.value = '12'
+        // keypad.textContent = '1234'
+
+        var doc = document;
+
+        var docFrag = doc.createDocumentFragment();
+        var symbols = ['-', '/', '+', '*']
+        for (var symbol of symbols) {
+            var button = document.createElement('button')
+            button.textContent = symbol
+            button.className = 'btn'
+
+            button.addEventListener('click', e => {
+                result.value += e.currentTarget.textContent
+
+            })
+            docFrag.appendChild(button)
+        }
+        clear.addEventListener('click', e => {
+            result.value = ''
+        })
+
+        equal = doc.createElement('button')
+        equal.textContent = '='
+        equal.style.fontweight = '1000'
+        equal.addEventListener('click', e => {
+            result.value = eval(result.value)
+        })
+        docFrag.appendChild(equal)
+        docFrag.appendChild(document.createElement('br'))
+
+        for (var x = 1; x < 10; x++) {
+            var button = doc.createElement('button');
+            button.textContent = x;
+            button.className = 'btn'
+            docFrag.appendChild(button);
+            button.addEventListener('click', e => {
+                result.value += e.currentTarget.textContent
+            })
+            if (x % 3 == 0) {
+                docFrag.appendChild(document.createElement('br'))
+            }
+        }
+
+        keypad.appendChild(docFrag);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<html>
+
+<body>
+    <div class=container>
+        <h3></h3>
+        <header></header>
+        <br>
+        <h4></h4>
+
+        <div class="form-group mb-2">
+            <label for=input>Date:</label>
+            <input id=input class="form-control" placeholder="date in ISO Format or seconds"
+            >
+            <!-- value=2021-03-28T -->
+            <!-- value=10000 -->
+        </div>
+
+        <button id=btnConvert class='btn btn-primary mb-2'>Convert!</button>
+        ISO: <button id=btnIso class='example btn mb-2'></button>
+        Seconds:<button id=btnSec class="example btn mb-2"></button>
+        <div class="margin" style="font-weight: bold;">
+            Result: <div id=res></div>
+        </div>
+
+        <div id=ghlink></div>
+
+        <footer></footer>
+    </div>
+
+    <script src=/assets/base.js></script>
+
+    <script>
+        var input = document.querySelector('#input');
+
+        var output = document.getElementById('res');
+
+        var date = new Date();
+        var btnConvert=document.getElementById('btnConvert')
+
+btnConvert.focus()
+
+        document.getElementById('btnIso').textContent = date.toISOString();
+        document.getElementById('btnSec').textContent = Math.trunc(date / 1000)
+
+        document.getElementsByClassName('example')[0].addEventListener('click', function (e) {
+            // console.log(this.textContent)
+            input.value = this.textContent
+        })
+        document.getElementsByClassName('example')[1].addEventListener('click', function (e) {
+            // console.log(this.textContent)
+            input.value = this.textContent
+        })
+        btnConvert.addEventListener('click', e => {
+            e.preventDefault();
+
+            fetch('/convertdate', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    content: input.value
+                })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data.result)
+                    output.textContent = data.result
+                })
+                //     const {
+                //         result
+                //     } = data;
+                //     slideSource.textContent = result
+                //     if (slideSource.className) {
+                //         slideSource.className = '';
+                //     } else {
+                //         slideSource.className = 'fade';
+                //     }
+                // })
+                .catch(err => console.log(err));
+            //console.log('end')
+        })
+    </script>
+</body>
+
+</html>

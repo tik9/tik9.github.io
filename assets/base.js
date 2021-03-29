@@ -1,15 +1,22 @@
 whref = window.location.href
 whost = window.location.host
+host = whost.split(':')[0]
 urlpathSplit = whref.split(whost)[1]
-fileName = urlpathSplit.split('.')[0]
+var fileName = urlpathSplit.split('.')[0].split('/')[2]
 
-sndPart = fileName.split('convert')[1]
-// h4 = document.querySelector('h4')
-// h4.textContent = fileName[1].toUpperCase() + fileName.slice(2)
-// if (sndPart) {
-//     h4.textContent = 'Convert ' + sndPart
-// }
-// console.log(whref, whost, urlpathSplit, sndPart)
+h4 = document.querySelector('h4')
+if (typeof fileName == 'undefined' || fileName=='README'){
+    h4.textContent = 'README'
+}
+// console.log('whost:', whost, urlpathSplit, 'filename:', fileName, host)
+
+else if (fileName.includes('convert')) {
+    sndPartConvert = fileName.split('convert')[1]
+    h4.textContent = 'Convert ' + sndPartConvert
+}
+else {
+    h4.textContent = fileName[0].toUpperCase() + fileName.slice(1)
+}
 
 ghlink = document.getElementById('ghlink')
 a = document.createElement('a')
@@ -19,10 +26,12 @@ a.href = 'https://github.com/tik9/tik9.github.io/blob/master' + urlpathSplit
 ghlink.appendChild(a)
 
 links_arr = {
-    Home: 'README.html',
-    Github: 'gh.html',
-    Stackexchange: 'se.html',
-    'Github Rest Api': 'https://github.com/tik9/rest-test',
+    Home: '/public/README.html',
+    Github: '/public/github.html',
+    Stackexchange: '/public/stackoverflow.html',
+    'Date Convert': '/public/convertdate.html',
+    'Calculate': '/public/calculate.html',
+    'Markdown Convert': '/public/convertmarkdown.html',
     Games: 'https://tik9.github.io/game',
 }
 
@@ -40,16 +49,18 @@ document.querySelector('header').appendChild(ul)
 
 
 title = 'Tiko\'s'
-header = document.querySelector('h3')
-header.textContent = title;
+h3 = document.querySelector('h3')
+h3.textContent = title;
 
 document.title = title
 
 head = document.querySelector('head')
 
-livereload = document.createElement('script')
-livereload.src = 'http://localhost:35729/livereload.js?snipver=1'
-head.appendChild(livereload)
+if (host == 'localhost') {
+    livereload = document.createElement('script')
+    livereload.src = 'http://localhost:35729/livereload.js?snipver=1'
+    head.appendChild(livereload)
+}
 
 icon = document.createElement('link');
 icon.rel = 'icon'
@@ -58,13 +69,13 @@ head.appendChild(icon)
 
 boots = document.createElement('link')
 boots.rel = 'stylesheet'
-boots.href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+boots.href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 
 head.appendChild(boots)
 
 css = document.createElement('link')
 css.rel = 'stylesheet'
-css.href = 'style.css'
+css.href = '/assets/style.css'
 head.appendChild(css)
-footer=document.querySelector('footer')
-footer.textContent=title+' made in 2021'
+footer = document.querySelector('footer')
+footer.textContent = title + ' made in 2021'

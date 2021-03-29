@@ -54,11 +54,12 @@ Jest tests|{::nomarkdown}<span style="display:inline-block; width: 30px" id=coun
 
 #### JS - what I use
 
-Function|Page|Comment|Example
+Function|Comment|Example
 -|-|-
-Listener scroll button | All | reacts to length of page|{::nomarkdown}<button class=button onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Click</button>{:/}
-Listener Keys|All|Press '1' for this page, '2', for Contact
-React States|here|Change state|{::nomarkdown}<span class=like_button_container data-commentid=2></span>{:/}
+Listener Keys|Keyboard instead of Mouse|Press '1' for this page, '2', for Contact
+Date|[Convert ISO Date to german date](public/convertdate.html) |2013-03-10T02:00:00Z => 1.1.2020
+Date|Convert Date in milliseconds to german date|1000000 => 1.1.2020
+Markdown-Html|[Convert markdown to html](public/convertmarkdown.html)| ## Header =><h2>header</h2>
 {:.table-striped .table-bordered}
 
 {::nomarkdown}
