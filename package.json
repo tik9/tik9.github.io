@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcrypt": "^4.0.1",
     "express": "^4.17.1",
     "jest": "^26.6.3",
     "jsonwebtoken": "^8.5.1",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://tik9.github.io",
   "scripts": {
-    "start": "nodemon server.js -e js,css,html,jpg,png,scss",
+    "start": "nodemon server.js -e js,css,html,scss",
     "test": "jest",
     "build": "browserify assets/func.js -o assets/bundle.js",
     "sass": "node-sass -w assets -o assets"

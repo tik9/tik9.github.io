@@ -1,9 +1,3 @@
----
-title: Imprint
-layout: default
----
-
-
 ### Declaration of Data Protection Policy for https://tik9.github.io
 <br>
 

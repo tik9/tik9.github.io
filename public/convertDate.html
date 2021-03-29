@@ -9,15 +9,14 @@
 
         <div class="form-group mb-2">
             <label for=input>Date:</label>
-            <input id=input class="form-control" placeholder="date in ISO Format or seconds"
-            >
+        <input id=input class=form-control-sm placeholder="date in ISO Format or sec"><span style="display:inline-block; width: 20px"></span><button id=btnConvert class='btn btn-primary mb-2'>Convert!</button>
             <!-- value=2021-03-28T -->
             <!-- value=10000 -->
         </div>
 
-        <button id=btnConvert class='btn btn-primary mb-2'>Convert!</button>
-        ISO: <button id=btnIso class='example btn mb-2'></button>
-        Seconds:<button id=btnSec class="example btn mb-2"></button>
+        
+        ISO <button id=btnIso class='example btn mb-2'></button>
+        Seconds <button id=btnSec class="example btn mb-2"></button>
         <div class="margin" style="font-weight: bold;">
             Result: <div id=res></div>
         </div>

@@ -29,9 +29,9 @@ links_arr = {
     Home: '/public/README.html',
     Github: '/public/github.html',
     Stackexchange: '/public/stackoverflow.html',
-    'Date Convert': '/public/convertdate.html',
+    'Date Convert': '/public/convertDate.html',
     'Calculate': '/public/calculate.html',
-    'Markdown Convert': '/public/convertmarkdown.html',
+    'Markdown Convert': '/public/convertMarkdown.html',
     Games: 'https://tik9.github.io/game',
 }
 

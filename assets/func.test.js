@@ -1,5 +1,5 @@
 
-result=require('./assets/func')
+result=require('./func')
 
     test('str',()=>{
         str='<test>aba</test>'
