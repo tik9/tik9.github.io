@@ -1,58 +1,65 @@
+
+String.prototype.capitalize = function () {
+    return this.charAt(0).toUpperCase() + this.slice(1)
+}
+
 whref = window.location.href
 whost = window.location.host
 host = whost.split(':')[0]
 urlpathSplit = whref.split(whost)[1]
-var fileName = urlpathSplit.split('.')[0].split('/')[2]
+fileNameHtml = urlpathSplit.split('/')[2]
+var fileName = fileNameHtml.split('.')[0]
 
-h4 = document.querySelector('h4')
-if (typeof fileName == 'undefined' || fileName=='README'){
-    h4.textContent = 'README'
+// console.log('whref', whref, 'whost:', whost, urlpathSplit, fileNameHtml, 'filename:', fileName, host)
+
+
+title = 'Tiko\'s'
+document.title = title + ' '+fileName
+h3 = document.querySelector('h3')
+h3.textContent = title
+if (fileName == '' || fileName == 'index') {
+    h3.textContent += ''
 }
-// console.log('whost:', whost, urlpathSplit, 'filename:', fileName, host)
 
 else if (fileName.includes('convert')) {
     sndPartConvert = fileName.split('convert')[1]
-    h4.textContent = 'Convert ' + sndPartConvert
+    h3.textContent += ' - Convert ' + sndPartConvert
 }
 else {
-    h4.textContent = fileName[0].toUpperCase() + fileName.slice(1)
+    h3.textContent += ' - '+fileName[0].toUpperCase() + fileName.slice(1)
 }
 
 ghlink = document.getElementById('ghlink')
 a = document.createElement('a')
 a.textContent = 'Source on Github'
 a.href = 'https://github.com/tik9/tik9.github.io/blob/master' + urlpathSplit
-// if (urlpathSplit != '/') {
 ghlink.appendChild(a)
 
-links_arr = {
-    Home: '/public/README.html',
-    Github: '/public/github.html',
-    Stackexchange: '/public/stackoverflow.html',
-    'Date Convert': '/public/convertDate.html',
-    'Calculate': '/public/calculate.html',
-    'Markdown Convert': '/public/convertMarkdown.html',
-    Games: 'https://tik9.github.io/game',
-}
+links_top = [
+    'index',
+    'github',
+    'stackoverflow',
+    'convertDate',
+    'calculate',
+    'convertMarkdown',
+    'contact'
+]
 
 ul = document.createElement('ul')
 ul.classList.add('list-unstyled')
-Object.keys(links_arr).forEach(key => {
-    toplinksitem = document.createElement('li')
-    ul.appendChild(toplinksitem)
+links_top.forEach(elem => {
+    li = document.createElement('li')
+    ul.appendChild(li)
     a = document.createElement('a')
-    toplinksitem.appendChild(a)
-    a.href = links_arr[key]
-    a.textContent = key
+    li.appendChild(a)
+    a.href = '/public/' + elem + '.html'
+    a.textContent = elem.capitalize()
+    if (elem == fileName) {
+        a.style.fontWeight = 'bold'
+        // console.log(urlpathSplit)
+    }
 })
 document.querySelector('header').appendChild(ul)
-
-
-title = 'Tiko\'s'
-h3 = document.querySelector('h3')
-h3.textContent = title;
-
-document.title = title
 
 head = document.querySelector('head')
 
@@ -62,20 +69,40 @@ if (host == 'localhost') {
     head.appendChild(livereload)
 }
 
+functions = document.createTextNode('script')
+functions.src = '/assets/func.js'
+head.appendChild(functions)
+
 icon = document.createElement('link');
 icon.rel = 'icon'
 icon.href = 'https://github.com/github.png'
 head.appendChild(icon)
 
-boots = document.createElement('link')
-boots.rel = 'stylesheet'
-boots.href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+links_css = ['https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', '/assets/style.css']
+links_css.forEach(elem => {
+    css = document.createElement('link')
+    css.rel = 'stylesheet'
+    css.href = elem
+    head.appendChild(css)
+})
 
-head.appendChild(boots)
-
-css = document.createElement('link')
-css.rel = 'stylesheet'
-css.href = '/assets/style.css'
-head.appendChild(css)
 footer = document.querySelector('footer')
-footer.textContent = title + ' made in 2021'
+
+// footer_head = document.createTextNode('span')
+// footer_head.textContent = title + ' made in 2021'
+// footer.appendChild(footer_head)
+ul = document.createElement('ul')
+ul.classList.add('list-unstyled')
+
+links_bottom = ['imprint', 'README',]
+links_bottom.forEach(elem => {
+
+    li = document.createElement('li')
+    aTag = document.createElement('a')
+    aTag.textContent = elem.capitalize()
+    aTag.href = '/public/' + elem + '.html'
+    li.appendChild(aTag)
+    ul.appendChild(li)
+})
+
+footer.appendChild(ul)

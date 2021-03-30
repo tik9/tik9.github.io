@@ -77,8 +77,8 @@ app.post('/convertdate', (req, res, next) => {
   if (/^\d+$/.test(inputval)) {
     // 1_000_000_000' =10^9 = 2001
     date_ = new Date(inputval * 1000)
-    dd = date_.getDate()
-    mm = date_.getMonth() + 1
+    dd = ('0'+date_.getDate()).slice(-2)
+    mm = ('0'+(date_.getMonth() + 1)).slice(-2)
     yyyy = date_.getFullYear()
     dtype = 'sec'
 

@@ -1,53 +1,73 @@
----
-layout: default
-title: Contact
----
+<html>
 
-<div id=contact style="margin-top: 40px;">
+<body>
 
-<h5>Two contact ways:</h5>
-- <span class=mail>window.atob('dXNlcjE1MzAxNUBnbWFpbC5jb20=')</span><br>
-- Form - see below 
+  <div class=container>
+    <h3></h3>
+    <header></header>
+    <br>
 
-<div style='margin-top:40px'></div>
+    <h4></h4>
 
-<form class=mail id="fs-frm" accept-charset="utf-8" method="post">
-    <div class=form-group>
+    <div id=contact style="margin-top: 40px;">
 
-    <label for="full-name">Full Name</label>
-    <input type="text" name="name" id="full-name" placeholder="First and Last" class=form-control required="">
+      <h5>Two (or three - look in the console) contact ways:</h5>
+      - <span class=mail>
+      </span>
+      <br>
+      - Form - see below
+
+      <div style='margin-top:40px'></div>
+
+      <form class=mail id="fs-frm" accept-charset="utf-8" method="post">
+        <div class=form-group>
+
+          <label for="full-name">Full Name</label>
+          <input type="text" name="name" id="full-name" placeholder="First and Last" class=form-control required="">
+        </div>
+
+        <div class=form-group>
+          <label for="email-address">Email Address</label>
+          <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" class=form-control
+            required="">
+        </div>
+
+        <div class=form-group>
+          <label for=quality>The website is high in quality.</label>
+          <select name="quality" id="quality" class=form-control required="">
+            <option value="Choose" selected="" disabled="">Choose</option>
+            <option value="3">Agree</option>
+            <option value="5">Neutral</option>
+            <option value="7">Disagree</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">Additional Comments</label>
+          <textarea rows="3" class=form-control name="message" id="message" placeholder="Enter message"
+            required=""></textarea>
+        </div>
+
+        <input type="hidden" name="_subject" id="email-subject" value="My website">
+
+        <button class='btn btn-primary' style="margin-top: 20px;">Submit</button>
+      </form>
     </div>
-    
-    <div class=form-group>
-    <label for="email-address">Email Address</label>
-    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" class=form-control required="">
-    </div>
-    
-    <div class=form-group>
-      <label for=quality>The website is high in quality.</label>
-      <select name="quality" id="quality" class=form-control required="">
-        <option value="Choose" selected="" disabled="">Choose</option>
-        <option value="3">Agree</option>
-        <option value="5">Neutral</option>
-        <option value="7">Disagree</option>
-      </select>
-    </div>
-    
-    <div>
-    <label for="message">Additional Comments</label>
-    <textarea rows="3" class=form-control name="message" id="message" placeholder="Enter message" required=""></textarea>
-    </div>
-    
-    <input type="hidden" name="_subject" id="email-subject" value="My website">
+    <div id=ghlink></div>
 
-    <button  class='btn btn-primary' style="margin-top: 20px;">Submit</button>
-</form>
-</div>
+    <footer></footer>
+  </div>
+  <script src=/assets/base.js></script>
 
-<script>
-mail=window.atob('dXNlcjE1MzAxNUBnbWFpbC5jb20=')
-//console.log()
-//document.getElementsByClassName('mail')[0].textContent=mail
-document.getElementsByClassName('mail')[1].action= 'https://formspree.io/f/'+mail
+  <script>
+    mail = "window.atob('dXNlcjE1MzAxNUBnbWFpbC5jb20=')"
+    mail_js = eval(mail)
+    console.log(mail_js)
 
-</script>
+    document.getElementsByClassName('mail')[0].textContent = mail
+    document.getElementsByClassName('mail')[1].action = 'https://formspree.io/f/' + mail_js
+
+  </script>
+</body>
+
+</html>
