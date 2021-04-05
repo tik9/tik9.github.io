@@ -28,10 +28,12 @@
   },
   "homepage": "https://tik9.github.io",
   "scripts": {
-    "start": "nodemon server.js -e js,css,html,scss",
     "test": "jest",
     "build": "browserify assets/func.js -o assets/bundle.js",
-    "sass": "node-sass -w assets -o assets"
+    "dev": "start nodemon server.js -e js,css,html,scss && start sass --style=compressed --watch assets/style.scss:assets/style.min.css --no-source-map",
+    "scs": "sass --style=compressed --watch assets/style.scss:assets/style.min.css --no-source-map",
+    "lr": "live-reload --port 9091 /public/**/*"
+
   },
   "jest": {
     "verbose": true,

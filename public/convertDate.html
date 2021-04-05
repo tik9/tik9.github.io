@@ -1,85 +1,99 @@
-<html>
+<div id=main>
 
-<body>
-    <div class=container>
-        <h3></h3>
-        <header></header>
-        <br>
-        <h4></h4>
+    <!-- <div class="form-group mb-2"> -->
+    <label for=input>Date:</label>
+    <input id=input class=form-control-sm placeholder='ISO Format,sec,year'>
+    <span style="display:inline-block; width: 20px"></span>
+    <span id=convertBtn></span>
+    <!-- <button id=convertFrom
+            class='btn btn-primary mb-2'>Convert from Sec./Iso!</button>
+        <span style="display:inline-block; width: 20px"></span><button id=convertTo class='btn btn-primary mb-2'>Convert
+            to Sec.!</button> -->
 
-        <div class="form-group mb-2">
-            <label for=input>Date:</label>
-        <input id=input class=form-control-sm placeholder="date in ISO Format or sec"><span style="display:inline-block; width: 20px"></span><button id=btnConvert class='btn btn-primary mb-2'>Convert!</button>
-            <!-- value=2021-03-28T -->
-            <!-- value=10000 -->
-        </div>
+    <!-- value=2021-03-28T -->
+    <!-- value=10000 -->
+    <!-- </div> -->
 
-        
-        ISO <button id=btnIso class='example btn mb-2'></button>
-        Seconds <button id=btnSec class="example btn mb-2"></button>
-        <div class="margin" style="font-weight: bold;">
-            Result: <div id=res></div>
-        </div>
+    <div id=exampleBtn></div>
 
-        <div id=ghlink></div>
-
-        <footer></footer>
+    <div class="margin" style="font-weight: bold;">
+        Result: <div id=res></div>
     </div>
 
-    <script src=/assets/base.js></script>
+</div>
 
-    <script>
-        var input = document.querySelector('#input');
+<script src=/assets/links.js></script>
+<script src=/assets/base.js></script>
 
-        var output = document.getElementById('res');
+<script>
 
-        var date = new Date();
-        var btnConvert=document.getElementById('btnConvert')
-
-btnConvert.focus()
-
-        document.getElementById('btnIso').textContent = date.toISOString();
-        document.getElementById('btnSec').textContent = Math.trunc(date / 1000)
-
-        document.getElementsByClassName('example')[0].addEventListener('click', function (e) {
-            // console.log(this.textContent)
+    btns = ['convertfrom', 'convertto']
+    convertBtn = document.getElementById('convertBtn')
+    btns.forEach(element => {
+        spn = document.createElement('span')
+        spn.style.display = 'inline-block'
+        spn.style.width = '20px'
+        btn = document.createElement('button')
+        btn.textContent = element
+        btn.id = element
+        btn.classList.add('btn', 'mb-2')
+        convertBtn.append(btn, spn)
+        btn.addEventListener('click', function (e) {
             input.value = this.textContent
-        })
-        document.getElementsByClassName('example')[1].addEventListener('click', function (e) {
-            // console.log(this.textContent)
-            input.value = this.textContent
-        })
-        btnConvert.addEventListener('click', e => {
+            console.log(input.value)
             e.preventDefault();
-
-            fetch('/convertdate', {
+            fetch('/' + element, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    content: input.value
+                    content: this.textContent
                 })
             })
                 .then(res => res.json())
                 .then(data => {
                     // console.log(data.result)
                     output.textContent = data.result
-                })
-                //     const {
-                //         result
-                //     } = data;
-                //     slideSource.textContent = result
-                //     if (slideSource.className) {
-                //         slideSource.className = '';
-                //     } else {
-                //         slideSource.className = 'fade';
-                //     }
-                // })
-                .catch(err => console.log(err));
-            //console.log('end')
+                }).catch(err => console.log('here err', err));
         })
-    </script>
-</body>
+    })
 
-</html>
+    // convertFrom = document.getElementById('convertFrom')
+    // convertTo = document.getElementById('convertTo')
+    exampleBtn = document.getElementById('exampleBtn')
+    btns = ['iso', 'sec', 'year']
+    btns.forEach(element => {
+        dist = document.createElement('span')
+        dist.style.display = 'inline-block'
+        dist.style.width = '10px'
+        spn = document.createElement('span')
+        spn.textContent = element
+        btn = document.createElement('button')
+        exampleBtn.append(spn, btn,dist)
+        btn.id = element
+        btn.classList.add('example', 'btn', 'mb-2')
+        btn.addEventListener('click', function (e) {
+            input.value = this.textContent
+            console.log(input.value)
+            // convertTo.focus()
+        })
+    })
+
+    var input = document.querySelector('#input');
+
+    var output = document.getElementById('res');
+
+    var date = new Date();
+
+    iso = document.querySelector('#iso')
+    sec = document.querySelector('#sec')
+    year = document.querySelector('#year')
+    year.focus()
+    iso.textContent = date.toISOString();
+    sec.textContent = Math.trunc(date / 1000)
+    date = new Date(2018, 0, 1)
+    // date=new Date()
+    year.textContent = date.toISOString().substring(0, 4)
+
+</script>

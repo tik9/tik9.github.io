@@ -1,0 +1,24 @@
+<div id=withSpace></div>
+<div id=withoutSpace></div>
+
+<script>
+
+    withElem = document.querySelector('#withSpace')
+    withoutElem = document.querySelector('#withoutSpace')
+    btn1 = document.createElement('button')
+    btn1.textContent = 'element1'
+    btn2 = document.createElement('button')
+    btn2.textContent = 'element2'
+    btn3 = document.createElement('button')
+    btn3.textContent = 'element1'
+    btn4 = document.createElement('button')
+    btn4.textContent = 'element2'
+
+    spn = document.createElement('span')
+    spn.style.display = 'inline-block'
+    // Get a spacer of 20px:
+    spn.style.width = '20px'
+    //Append it to another node
+    withElem.append(btn1, spn, btn2)
+    withoutElem.append(btn3, btn4)
+</script>

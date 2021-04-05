@@ -1,22 +1,15 @@
-<html>
-<body>
-    <div class=container>
-        <h3></h3>
-        <header></header>
-        <br>
-        <h4></h4>
-        <input id=result>
+<div id=main>
+
+<input id=result>
         <div style="margin-top: 20px;"></div>
         <div id=keypad></div>
         <div style="margin-top: 20px;"></div>
 
         <button class="button" id=clear>clear</button>
 
-        <div id=ghlink></div>
-
-        <footer></footer>
     </div>
 
+    <script src="/assets/links.js"></script>
     <script src="/assets/base.js"></script>
     <script>
         result = document.getElementById('result')
@@ -67,9 +60,4 @@
         }
 
         keypad.appendChild(docFrag);
-
     </script>
-
-</body>
-
-</html>

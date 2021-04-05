@@ -31,7 +31,7 @@ converter = new showdown.Converter()
 
 
 app.get('', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public', 'README.html'));
+  res.sendFile(path.join(__dirname, '/public', 'index.html'));
 });
 
 app.use('/', routes)
@@ -59,7 +59,7 @@ app.post('/convertmd',
       converter.setOption('simplifiedAutoLink', 'true');
       html = converter.makeHtml(text)
       // res.json(['mdown', html, text]);
-      res.json([html]);
+      res.json([html, text]);
     }
     else {
       next('an error occurred')
@@ -69,16 +69,24 @@ app.post('/convertmd',
     return res.status(401).send({ success: false, message: err })
   });
 
+app.post('/convertto', (req, res, next) => {
+  const input = req.body.content
+  seconds = new Date(input, 0, 1)
+  res.json({
+    // result: input
+    result: seconds
+  });
+})
 
-app.post('/convertdate', (req, res, next) => {
+app.post('/convertfrom', (req, res, next) => {
 
   const inputval = req.body.content
   // var dtype
   if (/^\d+$/.test(inputval)) {
     // 1_000_000_000' =10^9 = 2001
     date_ = new Date(inputval * 1000)
-    dd = ('0'+date_.getDate()).slice(-2)
-    mm = ('0'+(date_.getMonth() + 1)).slice(-2)
+    dd = ('0' + date_.getDate()).slice(-2)
+    mm = ('0' + (date_.getMonth() + 1)).slice(-2)
     yyyy = date_.getFullYear()
     dtype = 'sec'
 

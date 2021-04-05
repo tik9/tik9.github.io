@@ -1,108 +1,127 @@
+ghIcon = 'https://github.com/github.png'
+liRe = 'http://localhost:35729/livereload.js?snipver=1'
 
-String.prototype.capitalize = function () {
-    return this.charAt(0).toUpperCase() + this.slice(1)
-}
+fa = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/'
 
-whref = window.location.href
-whost = window.location.host
-host = whost.split(':')[0]
-urlpathSplit = whref.split(whost)[1]
-fileNameHtml = urlpathSplit.split('/')[2]
-var fileName = fileNameHtml.split('.')[0]
-
-// console.log('whref', whref, 'whost:', whost, urlpathSplit, fileNameHtml, 'filename:', fileName, host)
-
-
-title = 'Tiko\'s'
-document.title = title + ' '+fileName
-h3 = document.querySelector('h3')
-h3.textContent = title
-if (fileName == '' || fileName == 'index') {
-    h3.textContent += ''
-}
-
-else if (fileName.includes('convert')) {
-    sndPartConvert = fileName.split('convert')[1]
-    h3.textContent += ' - Convert ' + sndPartConvert
-}
-else {
-    h3.textContent += ' - '+fileName[0].toUpperCase() + fileName.slice(1)
-}
-
-ghlink = document.getElementById('ghlink')
-a = document.createElement('a')
-a.textContent = 'Source on Github'
-a.href = 'https://github.com/tik9/tik9.github.io/blob/master' + urlpathSplit
-ghlink.appendChild(a)
-
-links_top = [
-    'index',
-    'github',
-    'stackoverflow',
-    'convertDate',
-    'calculate',
-    'convertMarkdown',
-    'contact'
+css = [
+    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap',
+    fa + 'fontawesome',
+    fa + 'solid',
+    fa + 'brands',
+    '/assets/style',
 ]
 
-ul = document.createElement('ul')
-ul.classList.add('list-unstyled')
-links_top.forEach(elem => {
-    li = document.createElement('li')
-    ul.appendChild(li)
-    a = document.createElement('a')
-    li.appendChild(a)
-    a.href = '/public/' + elem + '.html'
-    a.textContent = elem.capitalize()
-    if (elem == fileName) {
-        a.style.fontWeight = 'bold'
-        // console.log(urlpathSplit)
-    }
-})
-document.querySelector('header').appendChild(ul)
+// js = ['links']
+
+// console.log(1)
+
+function insert(refNode, newNode) {
+    refNode.parentNode.insertBefore(newNode, refNode.nextSibling)
+}
+
+function replaceGlobal(orig, search, replace) {
+    regex = new RegExp(search, 'g')
+    return orig.replace(regex, replace)
+}
+whref = window.location.href; whost = window.location.host
+urlpathSplit = whref.split(whost)[1]
+fileNameTmp = urlpathSplit.split('.')[0];
+host = whost.split(':')[0]
+
+if (fileNameTmp != '/') { fileName = fileNameTmp.split('public/')[1] }
+else { fileName = 'Home_' }
+fileName = replaceGlobal(fileName, '_', ' ')
+
+// console.log(whref, whost, urlpathSplit, 'filename', fileName, 'fntmp', fileNameTmp)
+
 
 head = document.querySelector('head')
-
 if (host == 'localhost') {
     livereload = document.createElement('script')
-    livereload.src = 'http://localhost:35729/livereload.js?snipver=1'
+    livereload.src = liRe
     head.appendChild(livereload)
 }
 
-functions = document.createTextNode('script')
-functions.src = '/assets/func.js'
-head.appendChild(functions)
 
 icon = document.createElement('link');
 icon.rel = 'icon'
-icon.href = 'https://github.com/github.png'
+icon.href = ghIcon
 head.appendChild(icon)
 
-links_css = ['https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', '/assets/style.css']
-links_css.forEach(elem => {
-    css = document.createElement('link')
-    css.rel = 'stylesheet'
-    css.href = elem
-    head.appendChild(css)
+css.forEach(elem => {
+    cssInc = document.createElement('link')
+    cssInc.rel = 'stylesheet'
+    cssInc.href = elem + '.min.css'
+    head.appendChild(cssInc)
 })
 
-footer = document.querySelector('footer')
 
-// footer_head = document.createTextNode('span')
-// footer_head.textContent = title + ' made in 2021'
-// footer.appendChild(footer_head)
+title = 'Tiko\'s'
+
+document.title = title
+body = document.querySelector('body')
+
+container = document.createElement('div')
+container.classList.add('container')
+body.appendChild(container)
+
+h3 = document.createElement('h3')
+h3.textContent = title
+homeLink = document.createElement('a')
+homeLink.href = '/'
+home = document.createElement('i')
+homeLink.appendChild(home)
+h3.appendChild(homeLink)
+home.classList.add('fas', 'fa-home')
+homeLink.style.marginLeft = '10px'
+
 ul = document.createElement('ul')
 ul.classList.add('list-unstyled')
-
-links_bottom = ['imprint', 'README',]
-links_bottom.forEach(elem => {
-
-    li = document.createElement('li')
-    aTag = document.createElement('a')
-    aTag.textContent = elem.capitalize()
-    aTag.href = '/public/' + elem + '.html'
-    li.appendChild(aTag)
-    ul.appendChild(li)
+linksArr.forEach(elem => {
+    toplinksitem = document.createElement('li')
+    ul.appendChild(toplinksitem)
+    a = document.createElement('a')
+    toplinksitem.appendChild(a)
+    a.href = '/public/' + elem + '.html'
+    a.textContent = elem
+    if (elem == fileName) {
+        a.style.fontWeight = 'bold'
+    }
 })
 
-footer.appendChild(ul)
+header = document.createElement('header')
+
+header.appendChild(ul)
+
+h4 = document.createElement('h4')
+h4.textContent = fileName[0].toUpperCase() + fileName.slice(1)
+br = document.createElement('br')
+header.appendChild(br)
+
+
+main = document.getElementById('main')
+main.style.marginTop = '30px'
+ghlink = document.createElement('div')
+ghlink.id = 'ghlink'
+ghlink.style.marginTop = '30px'
+
+if (urlpathSplit != '/') {
+    // console.log('ele', fileName)
+    a = document.createElement('a')
+    a.textContent = 'Source on Github'
+    a.href = 'https://github.com/tik9/rest-test/blob/master' + urlpathSplit
+    ghlink.appendChild(a)
+}
+footer = document.createElement('footer')
+container.append(h3, header, h4, main, ghlink, footer)
+
+footer.textContent = title + ' made in 2021'
+scripts = document.getElementsByTagName('script')
+for (script of scripts) {
+    container.parentNode.insertBefore(script, container.nextSibling)
+}
+// js.forEach(elem => {
+//     jsIn = document.createElement('script')
+//     jsIn.src = '/assets' + elem + '.js'
+//     footer.appendChild(jsIn)
+// })

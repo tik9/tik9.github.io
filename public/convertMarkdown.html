@@ -1,12 +1,4 @@
-<html>
-
-<body>
-
-    <div class=container>
-        <h3></h3>
-        <header></header>
-        <br>
-        <h4></h4>
+<div id=main>
 
         <div class="margin">
             <label for="message">Input:</label>
@@ -26,10 +18,7 @@
             Html: <div id=html></div>
         </div>
 
-        <div id=ghlink></div>
-
-        <footer></footer>
-
+        <script src=/assets/links.js></script>
         <script src=/assets/base.js></script>
         <script>
             input = document.querySelector('textarea')
@@ -37,6 +26,9 @@
             outputHtml = document.querySelector('#html')
             clearButton = document.querySelector('#clear')
             sendButton = document.querySelector('#send')
+            
+            input.focus()
+
             clearButton.addEventListener('click', event => {
                 input.value = ''
                 output.textContent = ''
@@ -44,7 +36,12 @@
             })
 
             input.addEventListener('keypress', event => {
+                
+                if (event.key=='Enter'){
+                    output.textContent+='\n'
+                } else{
                 output.textContent += event.key
+                }
                 // console.log(event.key)
             })
 
@@ -69,6 +66,3 @@
             })
 
         </script>
-</body>
-
-</html>
