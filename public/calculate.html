@@ -16,7 +16,7 @@
         keypad = document.getElementById('keypad')
         clear = document.getElementById('clear')
         clear.className = 'btn'
-        result.value = '12'
+        result.value = '12+3'
 
         var doc = document;
 
@@ -43,6 +43,8 @@
         equal.addEventListener('click', e => {
             result.value = eval(result.value)
         })
+        equal.focus()
+        
         docFrag.appendChild(equal)
         docFrag.appendChild(document.createElement('br'))
 

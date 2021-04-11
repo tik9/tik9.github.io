@@ -2,17 +2,13 @@
 
     <!-- <div class="form-group mb-2"> -->
     <label for=input>Date:</label>
-    <input id=input class=form-control-sm placeholder='ISO Format,sec,year'>
+    <input id=input class=form-control-sm placeholder='ISO Format, sec, year' value=2019>
+    <!-- -01-01 -->
     <span style="display:inline-block; width: 20px"></span>
     <span id=convertBtn></span>
-    <!-- <button id=convertFrom
-            class='btn btn-primary mb-2'>Convert from Sec./Iso!</button>
-        <span style="display:inline-block; width: 20px"></span><button id=convertTo class='btn btn-primary mb-2'>Convert
-            to Sec.!</button> -->
 
     <!-- value=2021-03-28T -->
     <!-- value=10000 -->
-    <!-- </div> -->
 
     <div id=exampleBtn></div>
 
@@ -27,7 +23,27 @@
 
 <script>
 
-    btns = ['convertfrom', 'convertto']
+    exampleBtn = document.getElementById('exampleBtn')
+    btns = ['iso', 'sec', 'year']
+    btns.forEach(element => {
+        dist = document.createElement('span')
+        dist.style.display = 'inline-block'
+        dist.style.width = '10px'
+        spn = document.createElement('span')
+        spn.textContent = element
+        btn = document.createElement('button')
+        exampleBtn.append(spn, btn, dist)
+        btn.id = element
+        btn.classList.add('example', 'btn', 'mb-2')
+        btn.addEventListener('click', function (e) {
+
+            input.value = this.textContent
+            // console.log(input.value)
+        })
+    })
+
+    btns = ['toseconds', 'todate']
+    // btns = ['todate', 'toseconds']
     convertBtn = document.getElementById('convertBtn')
     btns.forEach(element => {
         spn = document.createElement('span')
@@ -39,44 +55,24 @@
         btn.classList.add('btn', 'mb-2')
         convertBtn.append(btn, spn)
         btn.addEventListener('click', function (e) {
-            input.value = this.textContent
-            console.log(input.value)
-            e.preventDefault();
+            // e.preventDefault();
             fetch('/' + element, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    content: this.textContent
+                    content: input.value
                 })
             })
                 .then(res => res.json())
                 .then(data => {
                     // console.log(data.result)
                     output.textContent = data.result
-                }).catch(err => console.log('here err', err));
-        })
-    })
-
-    // convertFrom = document.getElementById('convertFrom')
-    // convertTo = document.getElementById('convertTo')
-    exampleBtn = document.getElementById('exampleBtn')
-    btns = ['iso', 'sec', 'year']
-    btns.forEach(element => {
-        dist = document.createElement('span')
-        dist.style.display = 'inline-block'
-        dist.style.width = '10px'
-        spn = document.createElement('span')
-        spn.textContent = element
-        btn = document.createElement('button')
-        exampleBtn.append(spn, btn,dist)
-        btn.id = element
-        btn.classList.add('example', 'btn', 'mb-2')
-        btn.addEventListener('click', function (e) {
-            input.value = this.textContent
-            console.log(input.value)
-            // convertTo.focus()
+                }).catch(err => {
+                    output.textContent = 'Falsche Eingabe'
+                    console.log('client err', err);
+                })
         })
     })
 
@@ -86,10 +82,13 @@
 
     var date = new Date();
 
+    todate = document.querySelector('#todate')
+    toseconds = document.querySelector('#toseconds')
+    todate.focus()
     iso = document.querySelector('#iso')
     sec = document.querySelector('#sec')
     year = document.querySelector('#year')
-    year.focus()
+    // year.focus()
     iso.textContent = date.toISOString();
     sec.textContent = Math.trunc(date / 1000)
     date = new Date(2018, 0, 1)

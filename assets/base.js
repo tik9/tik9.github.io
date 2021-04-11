@@ -28,8 +28,9 @@ urlpathSplit = whref.split(whost)[1]
 fileNameTmp = urlpathSplit.split('.')[0];
 host = whost.split(':')[0]
 
-if (fileNameTmp != '/') { fileName = fileNameTmp.split('public/')[1] }
+if (fileNameTmp != '/' && fileNameTmp != '/public/') { fileName = fileNameTmp.split('public/')[1] }
 else { fileName = 'Home_' }
+
 fileName = replaceGlobal(fileName, '_', ' ')
 
 // console.log(whref, whost, urlpathSplit, 'filename', fileName, 'fntmp', fileNameTmp)
@@ -75,6 +76,14 @@ h3.appendChild(homeLink)
 home.classList.add('fas', 'fa-home')
 homeLink.style.marginLeft = '10px'
 
+var position = fileName.length
+for (var i = 0; i < fileName.length; i++) {
+    if (fileName[i].match(/[A-Z]/) != null) {
+        position = i;
+    }
+}
+// console.log('pos', position)
+
 ul = document.createElement('ul')
 ul.classList.add('list-unstyled')
 linksArr.forEach(elem => {
@@ -83,7 +92,16 @@ linksArr.forEach(elem => {
     a = document.createElement('a')
     toplinksitem.appendChild(a)
     a.href = '/public/' + elem + '.html'
-    a.textContent = elem
+    var position = elem.length
+    for (var i = 0; i < elem.length; i++) {
+
+        if (elem[i].match(/[A-Z]/) != null) {
+            position = i;
+        }
+    }
+     fnTmp= elem.substring(0, position) + ' ' + elem.substring(position)
+     a.textContent=fnTmp[0].toUpperCase()+ fnTmp.slice(1)
+    //  console.log(elem,fileName)
     if (elem == fileName) {
         a.style.fontWeight = 'bold'
     }
@@ -94,7 +112,11 @@ header = document.createElement('header')
 header.appendChild(ul)
 
 h4 = document.createElement('h4')
-h4.textContent = fileName[0].toUpperCase() + fileName.slice(1)
+fileName = fileName.substring(0, position) + ' ' + fileName.substring(position);
+fnUpper = fileName[0].toUpperCase() + fileName.slice(1)
+
+h4.textContent = fnUpper
+
 br = document.createElement('br')
 header.appendChild(br)
 
@@ -116,12 +138,8 @@ footer = document.createElement('footer')
 container.append(h3, header, h4, main, ghlink, footer)
 
 footer.textContent = title + ' made in 2021'
+
 scripts = document.getElementsByTagName('script')
 for (script of scripts) {
     container.parentNode.insertBefore(script, container.nextSibling)
 }
-// js.forEach(elem => {
-//     jsIn = document.createElement('script')
-//     jsIn.src = '/assets' + elem + '.js'
-//     footer.appendChild(jsIn)
-// })

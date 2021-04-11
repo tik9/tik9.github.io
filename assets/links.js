@@ -4,6 +4,7 @@ linksArr = [
     'stackoverflow',
     'convertDate',
     'calculate',
+    'calculateNoeval',
     'convertMarkdown',
     'contact'
 ]
