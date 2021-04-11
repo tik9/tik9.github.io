@@ -131,7 +131,7 @@ if (urlpathSplit != '/') {
     // console.log('ele', fileName)
     a = document.createElement('a')
     a.textContent = 'Source on Github'
-    a.href = 'https://github.com/tik9/rest-test/blob/master' + urlpathSplit
+    a.href = 'https://github.com/tik9/tik9.github.io/blob/master' + urlpathSplit
     ghlink.appendChild(a)
 }
 footer = document.createElement('footer')
