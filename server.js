@@ -6,9 +6,6 @@ const app = express();
 
 const dateUtils = require('./lib/date')
 
-// import { square, diag } from 'find';
-
-// const find = require('./lib/find')
 
 app.use('/public', express.static('public'))
 app.use('/assets', express.static('assets'))
@@ -49,11 +46,12 @@ app.post('/convertmd',
 app.post('/toseconds', (req, res, next) => {
   const input = req.body.content
   // var daDe,daObj
-  if (/^\d+$/.test(input)) {
-    date = new Date(input, 0, 1)
+  if (/^\d+$/.test(input) && input.toString().length < 7) {
+    daObj = new Date(input, 0, 1)
     // console.log('da',date)
   } else if (/^\d{4}-\d{2}-\d{2}T?/.test(input)) {
     [daDe, daObj] = dateUtils.toDateFromIso(input)
+    console.log('dade', daDe)
   } else {
     next('server err')
   }
@@ -61,7 +59,8 @@ app.post('/toseconds', (req, res, next) => {
 
   res.json({
     // result: input
-    result: seconds
+    result: seconds,
+    // error: 
   });
 })
 
@@ -75,7 +74,8 @@ app.post('/todate', (req, res, next) => {
 
     console.log('serv inp2', input)
     // dtype = 'sec'
-    [daDe, daObj] = dateUtils.toDateFromSeconds(input)
+    daDe = dateUtils.toDateFromSeconds(input)[0]
+    // [daDe, daObj] = dateUtils.toDateFromSeconds(input)
   } else if (/^\d{4}-\d{2}-\d{2}T\d{2}/.test(input)) {
     [daDe, daObj] = dateUtils.toDateFromIso(input)
     dtype = 'iso'

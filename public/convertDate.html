@@ -1,14 +1,9 @@
 <div id=main>
 
-    <!-- <div class="form-group mb-2"> -->
     <label for=input>Date:</label>
     <input id=input class=form-control-sm placeholder='ISO Format, sec, year' value=2019>
-    <!-- -01-01 -->
     <span style="display:inline-block; width: 20px"></span>
     <span id=convertBtn></span>
-
-    <!-- value=2021-03-28T -->
-    <!-- value=10000 -->
 
     <div id=exampleBtn></div>
 
@@ -32,7 +27,7 @@
         spn = document.createElement('span')
         spn.textContent = element
         btn = document.createElement('button')
-        exampleBtn.append(spn, btn, dist)
+        exampleBtn.append(spn, dist,btn, dist)
         btn.id = element
         btn.classList.add('example', 'btn', 'mb-2')
         btn.addEventListener('click', function (e) {

@@ -19,10 +19,6 @@ function insert(refNode, newNode) {
     refNode.parentNode.insertBefore(newNode, refNode.nextSibling)
 }
 
-function replaceGlobal(orig, search, replace) {
-    regex = new RegExp(search, 'g')
-    return orig.replace(regex, replace)
-}
 whref = window.location.href; whost = window.location.host
 urlpathSplit = whref.split(whost)[1]
 fileNameTmp = urlpathSplit.split('.')[0];
@@ -31,7 +27,8 @@ host = whost.split(':')[0]
 if (fileNameTmp != '/' && fileNameTmp != '/public/') { fileName = fileNameTmp.split('public/')[1] }
 else { fileName = 'Home_' }
 
-fileName = replaceGlobal(fileName, '_', ' ')
+// regex = new RegExp('_', 'g')
+// fileName = fileName.replace(regex, '')
 
 // console.log(whref, whost, urlpathSplit, 'filename', fileName, 'fntmp', fileNameTmp)
 
@@ -76,13 +73,6 @@ h3.appendChild(homeLink)
 home.classList.add('fas', 'fa-home')
 homeLink.style.marginLeft = '10px'
 
-var position = fileName.length
-for (var i = 0; i < fileName.length; i++) {
-    if (fileName[i].match(/[A-Z]/) != null) {
-        position = i;
-    }
-}
-// console.log('pos', position)
 
 ul = document.createElement('ul')
 ul.classList.add('list-unstyled')
@@ -99,8 +89,9 @@ linksArr.forEach(elem => {
             position = i;
         }
     }
-     fnTmp= elem.substring(0, position) + ' ' + elem.substring(position)
-     a.textContent=fnTmp[0].toUpperCase()+ fnTmp.slice(1)
+    // console.log('pos', position)
+    fnTmp = elem.substring(0, position) + ' ' + elem.substring(position)
+    a.textContent = fnTmp[0].toUpperCase() + fnTmp.slice(1)
     //  console.log(elem,fileName)
     if (elem == fileName) {
         a.style.fontWeight = 'bold'
@@ -112,6 +103,14 @@ header = document.createElement('header')
 header.appendChild(ul)
 
 h4 = document.createElement('h4')
+
+var position = fileName.length
+for (var i = 0; i < fileName.length; i++) {
+    if (fileName[i].match(/[A-Z]/) != null) {
+        position = i;
+    }
+}
+
 fileName = fileName.substring(0, position) + ' ' + fileName.substring(position);
 fnUpper = fileName[0].toUpperCase() + fileName.slice(1)
 
