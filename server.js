@@ -44,9 +44,13 @@ app.post('/convertmd',
   });
 
 app.post('/toseconds', (req, res, next) => {
-  const input = req.body.content
+  input = req.body.content
   // var daDe,daObj
-  if (/^\d+$/.test(input) && input.toString().length < 7) {
+  if (input.toString().length >= 7 || input.toString().length <= 3) {
+    input = 'Eingabe korrigieren'
+    daObj = new Date()
+  }
+  else if (/^\d+$/.test(input)) {
     daObj = new Date(input, 0, 1)
     // console.log('da',date)
   } else if (/^\d{4}-\d{2}-\d{2}T?/.test(input)) {
@@ -60,6 +64,7 @@ app.post('/toseconds', (req, res, next) => {
   res.json({
     // result: input
     result: seconds,
+    input: input
     // error: 
   });
 })

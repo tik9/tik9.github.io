@@ -27,7 +27,7 @@
         spn = document.createElement('span')
         spn.textContent = element
         btn = document.createElement('button')
-        exampleBtn.append(spn, dist,btn, dist)
+        exampleBtn.append(spn, dist, btn, dist)
         btn.id = element
         btn.classList.add('example', 'btn', 'mb-2')
         btn.addEventListener('click', function (e) {
@@ -63,7 +63,7 @@
                 .then(res => res.json())
                 .then(data => {
                     // console.log(data.result)
-                    output.textContent = data.result
+                    output.textContent = [data.input, data.result]
                 }).catch(err => {
                     output.textContent = 'Falsche Eingabe'
                     console.log('client err', err);

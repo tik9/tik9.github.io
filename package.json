@@ -35,5 +35,8 @@
       "_site",
       "testing"
     ]
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.9.1"
   }
 }

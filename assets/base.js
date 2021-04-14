@@ -24,13 +24,12 @@ urlpathSplit = whref.split(whost)[1]
 fileNameTmp = urlpathSplit.split('.')[0];
 host = whost.split(':')[0]
 
-if (fileNameTmp != '/' && fileNameTmp != '/public/') { fileName = fileNameTmp.split('public/')[1] }
-else { fileName = 'Home_' }
+fileName = 'Home'
 
-// regex = new RegExp('_', 'g')
-// fileName = fileName.replace(regex, '')
+if (fileNameTmp != '/' && fileNameTmp != '/public' && fileNameTmp != '/public/') { fileName = fileNameTmp.split('public/')[1] }
 
-// console.log(whref, whost, urlpathSplit, 'filename', fileName, 'fntmp', fileNameTmp)
+
+console.log('href', whref, 'host', whost, 'urlpathsplit', urlpathSplit, 'filename', fileName, 'fntmp', fileNameTmp)
 
 
 head = document.querySelector('head')
@@ -89,7 +88,6 @@ linksArr.forEach(elem => {
             position = i;
         }
     }
-    // console.log('pos', position)
     fnTmp = elem.substring(0, position) + ' ' + elem.substring(position)
     a.textContent = fnTmp[0].toUpperCase() + fnTmp.slice(1)
     //  console.log(elem,fileName)
@@ -105,6 +103,8 @@ header.appendChild(ul)
 h4 = document.createElement('h4')
 
 var position = fileName.length
+// console.log('pos', position)
+
 for (var i = 0; i < fileName.length; i++) {
     if (fileName[i].match(/[A-Z]/) != null) {
         position = i;
