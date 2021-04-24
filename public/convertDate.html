@@ -63,7 +63,7 @@
                 .then(res => res.json())
                 .then(data => {
                     // console.log(data.result)
-                    output.textContent = [data.input, data.result]
+                    output.textContent = [data.error, data.result]
                 }).catch(err => {
                     output.textContent = 'Falsche Eingabe'
                     console.log('client err', err);

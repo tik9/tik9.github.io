@@ -6,5 +6,6 @@ linksArr = [
     'calculate',
     'calculateNoeval',
     'convertMarkdown',
+    'guestbook',
     'contact'
 ]

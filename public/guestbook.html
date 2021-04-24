@@ -1,0 +1,98 @@
+<div id=main>
+
+  <table class="table">
+
+    <tr>
+      <th></th>
+      <th>name</th>
+      <th>mail</th>
+      <th>message</th>
+    </tr>
+
+  </table>
+
+  <form action=/postToGuestbook method=post>
+    <h2 class=margin>
+      Please say nice things
+    </h2>
+
+    <label for="name">
+      Name:
+      <input id="name" name="name" type="text" value=tim placeholder=Tim />
+    </label>
+
+    <label for=mail>
+      Mail:
+      <input id="mail" name="mail" type="text" placeholder="TheRock@a.b" value=tim@ />
+    </label>
+
+    <label for="message">
+      Message:
+      <input id="message" name="message" type="text" placeholder="cool text!" value=hell />
+    </label>
+
+    <button id=submit class="btn btn-primary">Post!</button>
+  </form>
+
+</div>
+
+<script src=/assets/links.js></script>
+<script src=/assets/base.js></script>
+
+<script>
+  const submitButton = document.getElementById('submit');
+  const guestbookForm = getElementsByTagName('form')[0]
+
+  submitButton.focus()
+
+  const guestbookEntries = [
+    {
+      name: 'tim',
+      mail: 'tim@tik9',
+      message: 'thanks wow!'
+    },
+  ]
+
+  const addGuestbookRecord = function (name, mail, message) {
+
+    const newRow = document.createElement('tr');
+
+    newRow.innerHTML = `<tr>
+      <td>${name}</td>
+      <td>${mail}</td>
+      <td>${message}</td>
+    </tr>`;
+
+    guestbookTable.appendChild(newRow)
+  }
+
+  const cleanseString = function (string) {
+    return string.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  const guestbookTable = document.getElementsByTagName('table')[0];
+
+  for (let i = 0; i < guestbookEntries.length; i++) {
+
+    addGuestbookRecord(guestbookEntries[i].name, guestbookEntries[i].mail, guestbookEntries[i].message);
+  }
+
+  submitButton.onclick = function (e) {
+
+    // this prevents the page from doing the default form submission,
+    // which we want to control ourselves
+    e.preventDefault();
+    console.log('form', guestbookForm)
+
+    if (!guestbookForm.name.value || !guestbookForm.mail.value || !guestbookForm.message.value) {
+      console.log('All values plz')
+    }
+    else {
+      // and we want to append a new row with our cleansed data
+      addGuestbookRecord(cleanseString(guestbookForm.name.value), cleanseString(guestbookForm.mail.value), cleanseString(guestbookForm.message.value));
+
+      guestbookForm.submit()
+      guestbookForm.reset();
+    }
+  }
+</script>
