@@ -1,8 +1,4 @@
 
-// console.log('gh')
-
-gh = 'https://api.github.com/users/tik9/repos'
-
 table = document.createElement('table');
 table.setAttribute('class', 'table')
 tr = document.createElement('tr');
@@ -18,11 +14,26 @@ tr.appendChild(th1)
 tr.appendChild(th2)
 tr.appendChild(th3)
 
-fetch(gh)
+github = 'https://api.github.com/users/tik9/repos'
+
+function compare( a, b ) {
+    if ( a.watchers < b.watchers ){
+      return -1;
+    }
+    if ( a.watchers > b.watchers ){
+      return 1;
+    }
+    return 0;
+  }
+
+fetch(github)
     .then(response => response.json())
     .then(data => {
-        for (element of data) {
 
+        data.sort( compare );
+        
+        for (element of data) {
+            
             tr = document.createElement('tr');
             td1 = document.createElement('td');
             td2 = document.createElement('td');
@@ -44,9 +55,7 @@ fetch(gh)
             hlink.textContent = element.description
 
             hlink.href = element.html_url
-
         }
-
     });
 
 document.getElementById('github').appendChild(table)

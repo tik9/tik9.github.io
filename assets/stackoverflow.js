@@ -31,7 +31,7 @@ copo.forEach(function (cp_elem) {
     activity = 'https://stackexchange.com/users/1886776/timo?tab=activity'
     // so = 'order=desc&sort=activity'
 
-    url = 'https://api.stackexchange.com/2.2/users/1705829/' + cp_elem + '?site=stackoverflow&filter=withbody&order=desc&sort=votes'
+    url = 'https://api.stackexchange.com/2.2/users/1705829/' + cp_elem + '?site=stackoverflow&filter=withbody&order=desc'
 
     fetch(url).then(response => response.json()).then(({
         items

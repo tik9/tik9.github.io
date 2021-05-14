@@ -29,7 +29,7 @@ fileName = 'Home'
 if (fileNameTmp != '/' && fileNameTmp != '/public' && fileNameTmp != '/public/') { fileName = fileNameTmp.split('public/')[1] }
 
 
-console.log('href', whref, 'host', whost, 'urlpathsplit', urlpathSplit, 'filename', fileName, 'fntmp', fileNameTmp)
+// console.log('href', whref, 'host', host, 'urlpathsplit', urlpathSplit, 'filename', fileName, 'fntmp', fileNameTmp)
 
 
 head = document.querySelector('head')

@@ -2,7 +2,6 @@
   "dependencies": {
     "browserify": "^17.0.0",
     "express": "^4.17.1",
-    "jest": "^26.6.3",
     "node-sass": "^5.0.0",
     "showdown": "^1.9.1",
     "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master"
@@ -34,14 +33,7 @@
     "lr": "live-reload --port 9091 /public/**/*",
     "deb": "nodemon --inspect server.js"
   },
-  "jest": {
-    "verbose": true,
-    "modulePathIgnorePatterns": [
-      "_site",
-      "testing"
-    ]
-  },
-  "devDependencies": {
-    "@vercel/node": "^1.9.1"
+  "nodemonConfig": {
+    "ignore": [".git/*","node_modules/*"]
   }
 }

@@ -6,6 +6,8 @@ const app = express();
 
 const dateUtils = require('./lib/date')
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
 
 app.use('/public', express.static('public'))
 app.use('/assets', express.static('assets'))
@@ -19,40 +21,40 @@ var db = new sqlite3.Database(dbFile);
 db.serialize(function () {
   if (!exists) {
     db.run('CREATE TABLE guestbook (name TEXT, mail TEXT, message TEXT)');
-    console.log('table guestbook created!');
-  }
-  else {
-    console.log('Database "guestbook" ready');
+    console.log('guestbook created!');
 
-    db.each('SELECT * from guestbook', function (err, row) {
-      console.log('record:', row);
-    });
+    // db.run("INSERT into guestbook (name,mail,message) VALUES ('ti','t@','hell')")
   }
 })
 
-// and endpoint to hit when submitting guestbook form data
-app.post('/postToGuestbook', function (request, response) {
+app.get('/getGuestbook', function(request, response) {
+  db.all('SELECT * from guestbook', function(err, rows) {
+    response.send(JSON.stringify(rows));
+    console.log('row',rows)
+  });
+
+});
+
+app.post('/postGuestbook', function (request, response) {
+  // console.log(' req name',request.body.name)
+  const values = `('${cleanInputs(request.body.name)}', '${cleanInputs(request.body.mail)}', '${cleanInputs(request.body.message)}')`;
+  // console.log('mes', values)
 
   db.serialize(function () {
-    var values = `('${cleanInputs(request.body.name)}', '${cleanInputs(request.body.mail)}', '${cleanInputs(request.body.message)}')`;
+
     db.run('INSERT INTO guestbook (name, mail, message) VALUES ' + values);
+    response.sendStatus(200)
   });
 })
 
 const cleanInputs = function (inputString) {
-  return inputString.replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+  return inputString.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
-
-// app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
 const converter = new showdown.Converter()
 
 app.get('', function (req, res, next) {
-  res.sendFile(path.join(__dirname,  '/public', 'index.html'));
+  res.sendFile(path.join(__dirname, '/public', 'index.html'));
 });
 app.get("/guest", function (request, response) {
   response.sendFile(__dirname + '/public/guestbook.html');
@@ -72,7 +74,7 @@ app.post('/convertmd',
       converter.setOption('simplifiedAutoLink', 'true');
       const html = converter.makeHtml(text)
       // res.json(['mdown', html, text]);
-      res.json([html, text]);
+      res.json([html]);
     }
     else {
       next('an error occurred')
@@ -108,8 +110,9 @@ app.post('/toseconds', (req, res, next) => {
 
 app.post('/todate', (req, res, next) => {
   const input = req.body.content
-  var dtype
+  // var dtype
   // var daDe,daObj
+  // console.log('serv inp1', input)
 
   if (/^\d+$/.test(input)) {
     // 1_000_000_000' =10^9 = 2001
@@ -122,7 +125,7 @@ app.post('/todate', (req, res, next) => {
     [daDe, daObj] = dateUtils.toDateFromIso(input)
     dtype = 'iso'
   } else {
-    next('serv: this is an error')
+    next('serv 3', '2nd', input)
   }
 
   res.json({

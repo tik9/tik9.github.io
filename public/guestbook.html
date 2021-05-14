@@ -3,7 +3,6 @@
   <table class="table">
 
     <tr>
-      <th></th>
       <th>name</th>
       <th>mail</th>
       <th>message</th>
@@ -11,27 +10,34 @@
 
   </table>
 
-  <form action=/postToGuestbook method=post>
+  <form class=mail action=/postGuestbook method=post>
     <h2 class=margin>
       Please say nice things
     </h2>
 
-    <label for="name">
-      Name:
-      <input id="name" name="name" type="text" value=tim placeholder=Tim />
-    </label>
+    <div class="form-group">
+      <label for="name">
+        Name
+      </label>
+      <input id=name name=name type=text placeholder='Tim from Hepberg' class="form-control-sm" value="" required />
+    </div>
 
-    <label for=mail>
-      Mail:
-      <input id="mail" name="mail" type="text" placeholder="TheRock@a.b" value=tim@ />
-    </label>
+    <div class='form-group'>
+      <label for=mail>
+        Mail
+      </label>
+      <input id="mail" class="form-control-sm" name="mail" type="text" placeholder="TheRock@a123456.b" required />
+    </div>
 
-    <label for="message">
-      Message:
-      <input id="message" name="message" type="text" placeholder="cool text!" value=hell />
-    </label>
+    <div class='form-group'>
+      <label for="message">
+        Message
+      </label>
+      <textarea id="message" class="form-control" name="message" rows="3" placeholder='Enter message'
+        required></textarea>
+    </div>
 
-    <button id=submit class="btn btn-primary">Post!</button>
+    <button id=btnsend class="btn btn-primary">Post!</button>
   </form>
 
 </div>
@@ -40,18 +46,23 @@
 <script src=/assets/base.js></script>
 
 <script>
-  const submitButton = document.getElementById('submit');
-  const guestbookForm = getElementsByTagName('form')[0]
+  const btnsend = document.getElementById('btnsend');
+  btnsend.focus()
 
-  submitButton.focus()
+  const guestbookEntries=[]
+  guestbookForm = document.getElementsByTagName('form')[0]
+  // guestbookForm = this.form
+  // name=document.querySelector("#name")
 
-  const guestbookEntries = [
-    {
-      name: 'tim',
-      mail: 'tim@tik9',
-      message: 'thanks wow!'
-    },
-  ]
+  nameform = guestbookForm.name
+  mail = guestbookForm.mail
+  message = guestbookForm.message
+
+  // nameform.value = 't k'
+  // mail.value = 't@'
+  // message.value = 'h th'
+
+  // console.log(name)
 
   const addGuestbookRecord = function (name, mail, message) {
 
@@ -66,7 +77,7 @@
     guestbookTable.appendChild(newRow)
   }
 
-  const cleanseString = function (string) {
+  const cleanInputs = function (string) {
     return string.replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
@@ -77,22 +88,51 @@
     addGuestbookRecord(guestbookEntries[i].name, guestbookEntries[i].mail, guestbookEntries[i].message);
   }
 
-  submitButton.onclick = function (e) {
+  btnsend.onclick = function (e) {
 
-    // this prevents the page from doing the default form submission,
-    // which we want to control ourselves
     e.preventDefault();
-    console.log('form', guestbookForm)
+    // console.log('form', guestbookForm)
 
-    if (!guestbookForm.name.value || !guestbookForm.mail.value || !guestbookForm.message.value) {
-      console.log('All values plz')
+    if (!nameform.value || !mail.value || !message.value) {
+      alert('All values please')
     }
     else {
-      // and we want to append a new row with our cleansed data
-      addGuestbookRecord(cleanseString(guestbookForm.name.value), cleanseString(guestbookForm.mail.value), cleanseString(guestbookForm.message.value));
+      const newRecord = {
+        name: cleanInputs(nameform.value),
+        mail: cleanInputs(mail.value),
+        message: cleanInputs(message.value)
+      };
 
-      guestbookForm.submit()
-      guestbookForm.reset();
+      // now we want to actually submit the form values before resetting it
+      fetch('/postGuestbook', {
+        method: 'POST',
+        body: JSON.stringify(newRecord),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .catch(function (err) {
+          console.error('Error client:', err);
+        })
+        .then(function () {
+          guestbookForm.reset();
+
+          addGuestbookRecord(newRecord.name, newRecord.mail, newRecord.message);
+        });
     }
   }
+
+  fetch('/getGuestbook')
+    .then(res => res.json())
+    .then(entries => {
+      // for each entry in guestbookEntries, create a row for that entry
+      // and append it to the table
+      for (let i = 0; i < entries.length; i++) {
+        // call the addGuestbookRecord helper to create a row
+        addGuestbookRecord(entries[i].name, entries[i].mail, entries[i].message);
+      }
+    })
+    .catch(err => {
+      console.error('Error Client:', err);
+    })
 </script>
