@@ -12,6 +12,7 @@ It is about..
 #### .. myself:
 - Javascript (Game) Developer
 - Python Developer
+- Github Poweruser - see bottom link on each page - [guestbook](guestbook.html), [calculate](calculate.html), etc - to github 
 
 It is also about..
 
@@ -25,7 +26,7 @@ It is also about..
 | ------------ | --------------------------------------------------------- | ---------------------------------------------------------------------- |
 | Alternatives | Bitbucket                                                 | no - maybe Reddit                                                      |
 | Content      | a **big** company in social coding                        | An **independent** company in question and answers                     |
-| Link         | [<i class="fab fa-github fa-2x"></i>](https://github.com) | [![img-Stackoverflow](./assets/pic_se.png)](https://Stackexchange.com) |
+| Link         | [Github](https://github.com) | [![img-Stackoverflow](/assets/stackoverflow.png)](https://stackoverflow.com) |
 
 <br><br>
 

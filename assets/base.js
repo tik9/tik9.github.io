@@ -136,7 +136,12 @@ if (urlpathSplit != '/') {
 footer = document.createElement('footer')
 container.append(h3, header, h4, main, ghlink, footer)
 
-footer.textContent = title + ' made in 2021'
+footerlink = document.createElement('a')
+footerlink.href = 'README.html'
+footerlink.textContent = 'README'
+
+footer.textContent =  title + ' made in 2021 | '
+footer.appendChild(footerlink)
 
 scripts = document.getElementsByTagName('script')
 for (script of scripts) {
