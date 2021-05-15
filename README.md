@@ -2,7 +2,7 @@
 
 ### Hi! Welcome to my Github and Stackexchange activities - tik9.github.io/public
 
-<br><br>
+<br>
 
 #### What is this site about?
 
@@ -13,6 +13,7 @@ It is about..
 - Javascript (Game) Developer
 - Python Developer
 - Github Poweruser - see bottom link on each page - [guestbook](guestbook.html), [calculate](calculate.html), etc - to github 
+- [Source of this README](https://github.com/tik9/tik9.github.io/blob/master/README.md)
 
 It is also about..
 
