@@ -1,6 +1,9 @@
 const path = require('path');
 const showdown = require('showdown');
 
+var fs = require('fs'); 
+var parse = require('csv-parse');
+
 const express = require('express');
 const app = express();
 
@@ -12,7 +15,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/public', express.static('public'))
 app.use('/assets', express.static('assets'))
 
-var fs = require('fs');
+app.use((error, req, res, next) => {
+  res.status(500).json({ error: error.toString() });
+});
+
 var dbFile = './guestbook.db';
 var exists = fs.existsSync(dbFile);
 var sqlite3 = require('sqlite3').verbose();
@@ -22,11 +28,32 @@ db.serialize(function () {
   if (!exists) {
     db.run('CREATE TABLE guestbook (name TEXT, mail TEXT, message TEXT)');
     console.log('guestbook created!');
-
-    // db.run("INSERT into guestbook (name,mail,message) VALUES ('ti','t@','hell')")
   }
 })
 
+app.get('/parsecsv', function(req, res){
+  var csvData=[];
+  fs.createReadStream('guest.csv')
+      .pipe(parse({delimiter: ','}))
+      .on('data', function(csvrow) {
+          // console.log(csvrow);
+          csvData.push(csvrow);        
+      })
+      .on('end',function() {
+        console.log(csvData);
+      });
+})
+app.get("/writecsv", function (request, response) {
+  
+  fs.writeFile('guest.csv', 'dataToWrite', 'utf8', function (err) {
+    if (err) {
+      console.log('error - file either not saved or corrupted.');
+    } else{
+      console.log('saved!');
+    }
+  });
+  // response.sendFile(__dirname + '/public/guestbook.html');
+});
 app.get('/getGuestbook', function(request, response) {
   db.all('SELECT * from guestbook', function(err, rows) {
     response.send(JSON.stringify(rows));
@@ -55,13 +82,6 @@ const converter = new showdown.Converter()
 
 app.get('', function (req, res, next) {
   res.sendFile(path.join(__dirname, '/public', 'index.html'));
-});
-app.get("/guest", function (request, response) {
-  response.sendFile(__dirname + '/public/guestbook.html');
-});
-
-app.use((error, req, res, next) => {
-  res.status(500).json({ error: error.toString() });
 });
 
 app.post('/convertmd',
@@ -112,7 +132,6 @@ app.post('/todate', (req, res, next) => {
   const input = req.body.content
   // var dtype
   // var daDe,daObj
-  // console.log('serv inp1', input)
 
   if (/^\d+$/.test(input)) {
     // 1_000_000_000' =10^9 = 2001
@@ -120,7 +139,6 @@ app.post('/todate', (req, res, next) => {
     console.log('serv inp2', input)
     // dtype = 'sec'
     daDe = dateUtils.toDateFromSeconds(input)[0]
-    // [daDe, daObj] = dateUtils.toDateFromSeconds(input)
   } else if (/^\d{4}-\d{2}-\d{2}T\d{2}/.test(input)) {
     [daDe, daObj] = dateUtils.toDateFromIso(input)
     dtype = 'iso'
