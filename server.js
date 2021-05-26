@@ -33,19 +33,20 @@ db.serialize(function () {
 
 app.get('/parsecsv', function(req, res){
   var csvData=[];
-  fs.createReadStream('guest.csv')
+  fs.createReadStream('config.csv')
       .pipe(parse({delimiter: ','}))
       .on('data', function(csvrow) {
           // console.log(csvrow);
           csvData.push(csvrow);        
       })
       .on('end',function() {
+        res.json(csvData)
         console.log(csvData);
       });
 })
 app.get("/writecsv", function (request, response) {
   
-  fs.writeFile('guest.csv', 'dataToWrite', 'utf8', function (err) {
+  fs.writeFile('guest.csv', 'dataToW', 'utf8', function (err) {
     if (err) {
       console.log('error - file either not saved or corrupted.');
     } else{

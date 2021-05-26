@@ -111,10 +111,8 @@
           'Content-Type': 'application/json'
         }
       })
-        .catch(function (err) {
-          console.error('Error client:', err);
-        })
-        .then(function () {
+        .catch(err => console.error('Error client:', err))
+        .then(()=> {
           guestbookForm.reset();
 
           addGuestbookRecord(newRecord.name, newRecord.mail, newRecord.message);

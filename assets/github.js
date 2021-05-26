@@ -17,10 +17,10 @@ tr.appendChild(th3)
 github = 'https://api.github.com/users/tik9/repos'
 
 function compare( a, b ) {
-    if ( a.watchers < b.watchers ){
+    if ( a.watchers > b.watchers ){
       return -1;
     }
-    if ( a.watchers > b.watchers ){
+    if ( a.watchers < b.watchers ){
       return 1;
     }
     return 0;

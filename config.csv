@@ -1,0 +1,6 @@
+reason, file,change,date,link
+fs watchers, /etc/sysctl.d/10-user-watches.conf,fs.inotify.max_user_watches = 100000,2021-05-25,https://stackoverflow.com/a/55411444/1705829
+
+DNS Server pi hole not working on client, /etc/dhcp/dhclient.conf,prepend domain-name-servers 192.168.178.36,2021-05-01, https://askubuntu.com/questions/1065568/block-outside-dns-fix-dns-leak-ubuntu-18-04/1077479#1077479
+
+shortcuts os wide,.config/openbox/lxqt-rc.xml,added a-left: moving window to left,2021-05-16,https://gist.github.com/Jasha10/8d985aa421fab053d1a2a0bd2743cf4b

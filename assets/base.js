@@ -11,9 +11,6 @@ css = [
     '/assets/style',
 ]
 
-// js = ['links']
-
-// console.log(1)
 
 function insert(refNode, newNode) {
     refNode.parentNode.insertBefore(newNode, refNode.nextSibling)

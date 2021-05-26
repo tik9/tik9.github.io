@@ -1,7 +1,9 @@
-### Declaration of Data Protection Policy for https://tik9.github.io/public
-<br>
+<div id=main>
 
-### Data Protection at a glance
+#### Declaration of Data Protection Policy for https://tik9.github.io/public
+
+
+#### Data Protection at a glance
 
 General info
 The following information will present an overview of what happens with your personal data while visiting my
@@ -12,7 +14,7 @@ Personal data is all data which can be used for identity of yourself.
 You get further information regarding data protection in the declaration that follows.
 Data acquisition on this website
 
-### Who is Responsible for the Data acquisition on this website?
+#### Who is Responsible for the Data acquisition on this website?
 
 The data processing will be realized by the content owner of this site.
 
@@ -28,14 +30,14 @@ This collection is done automatic as soon as you call the website.
 
 I use your data to present the contents and to analyse the consumption of my site. 
 
-### Responsibility
-
-Responsible for the website is:
+Responsible for the website:
 
 Timo K&ouml;rner
 
-Bergstraße 15
-
-85120 Hepberg
-
 Germany
+
+[Contact](contact.html) 
+</div>
+
+  <script src=/assets/links.js></script>
+  <script src=/assets/base.js></script>

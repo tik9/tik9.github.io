@@ -7,5 +7,6 @@ linksArr = [
     'calculateNoeval',
     'convertMarkdown',
     'guestbook',
-    'contact'
+    'contact',
+    'imprint'
 ]

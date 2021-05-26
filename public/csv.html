@@ -1,0 +1,24 @@
+Test
+<div id=result>
+</div>
+
+<script>
+    result = document.querySelector('#result')
+
+    fetch('/parsecsv').catch(err => { console.error('err', err) }).
+        then(res => { res.json() }).then(entries => {
+            // for (var i = 0; i < entries.length; i++) {
+            //     console.log('i', i)
+            // }
+            var list=entries.split(/\n+/)
+
+            var re = /,/;
+            // var headers = list.shift().split(re);
+            var res = list.map(function (val, key) {
+                return val.split(re);
+            });
+            console.log(res);
+        })
+        .catch(err => console.error('err', err))
+
+</script>

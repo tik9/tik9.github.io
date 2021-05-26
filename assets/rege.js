@@ -1,11 +1,11 @@
-//console.log('fun 1 js')
+// console.log('loading: ' + document.scripts[document.scripts.length-1].src)
 
 
-global.rege = function(body) {
+rege = function(body) {
     reg1 = /<\/?(.*?)>/g
     // reg2 = '&quot;' //"
     reg2 = /&lt;(.*?)&gt;/g
-    reg3 = ''
+    reg3 = /&quot;/g
     regs = [reg1, reg2, reg3]
 
     for (reg of regs) {
@@ -16,4 +16,4 @@ global.rege = function(body) {
     return body
 }
 
-module.exports = rege
+// module.exports = rege
