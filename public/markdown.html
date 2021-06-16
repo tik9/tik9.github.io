@@ -1,0 +1,28 @@
+<div id=main>
+    <h5>Md Input</h5>
+    <div id=md></div>
+    <h5>Raw html Output</h5>
+    <div id=rawhtml></div>
+    <h5>Html Final</h5>
+    <div id=html></div>
+</div>
+
+<script src="/assets/links.js"></script>
+<script src=/assets/bundle.js></script>
+<script src=/assets/base.js></script>
+<script>
+    var converter = new showdown.Converter()
+
+    var text = '| h1    |    h2   |      h3 |\n' +
+        '|:------|:-------:|--------:|\n' +
+        '| 100   | [a][1]  | ![b][2] |'
+
+    a = { f: converter.setOption('tables', true) };
+    b = converter.setOption('tablesHeaderId', true);
+
+    html = converter.makeHtml(text);
+    document.querySelector('#md').textContent = text
+    document.querySelector('#rawhtml').textContent = html
+    document.querySelector('#html').innerHTML = html
+    // console.log('original text\n', text)
+</script>
