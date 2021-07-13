@@ -1,3 +1,7 @@
+script=document.scripts[document.scripts.length-1].src
+scriptname=script.substring(script.lastIndexOf('/')+1,script.length)
+console.log('script',document.scripts.length,scriptname)
+
 ghIcon = 'https://github.com/github.png'
 liRe = 'http://localhost:35729/livereload.js?snipver=1'
 
